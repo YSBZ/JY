@@ -1,5 +1,5 @@
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -9,27 +9,39 @@ import type { Locale } from '../content/site'
 
 function LanguageToggle({ locale, onChange }: { locale: Locale; onChange: (locale: Locale) => void }) {
   return (
-    <ToggleGroup.Root
-      aria-label="Language switcher"
-      className="inline-flex border border-white/10 bg-black/30 p-1"
-      onValueChange={(value) => {
-        if (value === 'en' || value === 'zh' || value === 'ar' || value === 'ru') {
-          onChange(value)
-        }
-      }}
-      type="single"
-      value={locale}
-    >
-      {localeOptions.map((value) => (
-        <ToggleGroup.Item
-          key={value}
-          className="cursor-pointer px-3 py-2 text-xs font-semibold tracking-[0.24em] text-stone-400 uppercase transition data-[state=on]:bg-amber-300/15 data-[state=on]:text-stone-100"
-          value={value}
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <button
+          aria-label="Language switcher"
+          className="inline-flex items-center justify-center border border-white/10 bg-black/30 px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+          type="button"
         >
-          {value.toUpperCase()}
-        </ToggleGroup.Item>
-      ))}
-    </ToggleGroup.Root>
+          {locale.toUpperCase()}
+        </button>
+      </DropdownMenu.Trigger>
+
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          align="end"
+          className="z-50 min-w-36 border border-white/10 bg-zinc-950/95 p-1 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+          sideOffset={8}
+        >
+          {localeOptions.map((value) => (
+            <DropdownMenu.Item
+              key={value}
+              className={`cursor-pointer px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] outline-none transition ${
+                value === locale
+                  ? 'bg-amber-300/15 text-stone-100'
+                  : 'text-stone-400 hover:bg-white/5 hover:text-stone-100'
+              }`}
+              onSelect={() => onChange(value)}
+            >
+              {value.toUpperCase()}
+            </DropdownMenu.Item>
+          ))}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
   )
 }
 
