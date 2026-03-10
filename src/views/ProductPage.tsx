@@ -39,6 +39,11 @@ export function ProductPage() {
           <p className="mt-4 text-lg leading-8 text-stone-400">{product.detail[locale]}</p>
         </div>
         <div className="flex flex-col justify-end gap-2 border border-white/10 bg-white/[0.03] p-5">
+          <img
+            alt={product.imageAlt}
+            className="mb-3 h-56 w-full border border-white/10 object-cover"
+            src={product.image}
+          />
           <span className="text-sm text-stone-400">{product.imageLabel}</span>
           <strong className="font-['Oxanium'] text-4xl text-amber-300">{product.category.toUpperCase()}</strong>
         </div>

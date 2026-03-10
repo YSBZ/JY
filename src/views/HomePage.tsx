@@ -38,14 +38,12 @@ export function HomePage() {
         </div>
 
         <div className="relative min-h-[320px] overflow-hidden border border-white/10 bg-[linear-gradient(160deg,rgba(241,190,50,0.14),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent_55%),#111519]">
-          <div className="grid h-full grid-cols-2 gap-4 p-6">
-            {Array.from({ length: 4 }).map((_, index) => (
-              <div
-                key={index}
-                className="border border-white/[0.08] bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_35%),linear-gradient(45deg,rgba(241,190,50,0.12),transparent_35%)]"
-              />
-            ))}
-          </div>
+          <img
+            alt={products[0].imageAlt}
+            className="h-full w-full object-cover opacity-80"
+            src={products[0].image}
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,17,19,0.18),rgba(15,17,19,0.72))]" />
           <div className="absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">Tracked output</span>
             <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">08</strong>
@@ -84,6 +82,11 @@ export function HomePage() {
               ].join(' ')}
               to={`/products/${product.slug}`}
             >
+              <img
+                alt={product.imageAlt}
+                className="mb-4 h-52 w-full border border-white/10 object-cover"
+                src={product.image}
+              />
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
                 {product.category}
               </div>

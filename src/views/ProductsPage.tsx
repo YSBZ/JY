@@ -28,6 +28,11 @@ export function ProductsPage() {
               className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
               to={`/products/${product.slug}`}
             >
+              <img
+                alt={product.imageAlt}
+                className="mb-4 h-52 w-full border border-white/10 object-cover"
+                src={product.image}
+              />
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{product.category}</div>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{product.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>

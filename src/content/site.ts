@@ -3,6 +3,8 @@ export type Locale = 'en' | 'zh'
 export type Product = {
   slug: string
   category: string
+  image: string
+  imageAlt: string
   imageLabel: string
   specs: string[]
   accent: string
@@ -155,60 +157,66 @@ export const contactCopy = {
 
 export const products: Product[] = [
   {
-    slug: 'crawler-crusher-series',
-    category: 'Crushing',
-    imageLabel: 'Crusher line',
-    specs: ['Tracked platform', 'Heavy feed intake', 'Export-ready configuration'],
+    slug: 'mud-machine-diesel',
+    category: 'Clay Processing',
+    image: '/images/products/mud-machine-diesel.jpg',
+    imageAlt: 'Diesel mud machine from Jiuyu Machinery',
+    imageLabel: 'Diesel mud machine',
+    specs: ['Tractor engine drive', 'Adjustable extrusion speed', 'CE-ready equipment'],
     accent: 'amber',
     title: {
-      en: 'Crawler Crusher Series',
-      zh: '履带式破碎机系列',
+      en: 'Diesel Mud Machine',
+      zh: '柴油泥料机',
     },
     summary: {
-      en: 'Configured for raw material reduction with a more stable heavy-duty posture.',
-      zh: '面向原料破碎工况，强调稳定性、连续性与重载表现。',
+      en: 'A heavy-duty clay processing machine built for steady extrusion and workshop-grade reliability.',
+      zh: '面向陶泥与泥料处理场景，强调稳定挤出和连续作业能力。',
     },
     detail: {
-      en: 'This series is positioned as a flagship expression of heavy-duty processing capability. It should lead with confidence, not marketplace clutter.',
-      zh: '这个系列适合作为官网重点产品，用来建立品牌对重载加工能力的第一印象，而不是简单平铺参数。',
+      en: 'This machine is a strong flagship candidate because it immediately communicates industrial function, mechanical structure, and Jiuyu’s manufacturing capability.',
+      zh: '这款设备很适合作为首页重点产品，它能直接体现 Jiuyu 的机械结构感、设备用途和制造能力。',
     },
   },
   {
-    slug: 'mobile-screening-unit',
-    category: 'Screening',
-    imageLabel: 'Screening deck',
-    specs: ['Modular screening deck', 'Field mobility', 'Multi-material output'],
+    slug: 'clay-roller-manual',
+    category: 'Forming',
+    image: '/images/products/clay-roller-manual.jpg',
+    imageAlt: 'Manual clay roller machine from Jiuyu Machinery',
+    imageLabel: 'Manual clay roller',
+    specs: ['No electricity required', 'Manual pressure control', 'Compact workshop footprint'],
     accent: 'steel',
     title: {
-      en: 'Mobile Screening Unit',
-      zh: '移动筛分站',
+      en: 'Manual Clay Roller Machine',
+      zh: '手动压泥机',
     },
     summary: {
-      en: 'A field-oriented screening setup for projects that need mobility and controlled output.',
-      zh: '适用于对移动性与筛分效率有要求的现场项目。',
+      en: 'A compact forming machine for smaller workshops that still need disciplined mechanical output.',
+      zh: '适合小型工坊与工作室的成型设备，强调紧凑结构与稳定输出。',
     },
     detail: {
-      en: 'The product page should combine industrial atmosphere with practical application language: where it works, what it supports, and why it earns trust.',
-      zh: '详情页应同时传达机械气质与应用价值，讲清楚适用场景、支持能力与可信理由。',
+      en: 'This model helps the site show range: Jiuyu is not only about larger processing units, but also practical equipment for smaller production environments.',
+      zh: '这款设备可以帮助官网展示产品覆盖面，说明 Jiuyu 不只是做大型设备，也能服务更灵活的生产场景。',
     },
   },
   {
-    slug: 'material-feeding-system',
-    category: 'Feeding',
-    imageLabel: 'Feeding system',
-    specs: ['Continuous feed', 'Industrial frame', 'Coordinated line support'],
+    slug: 'mud-squeezing-pug-mill',
+    category: 'Mixing & Extrusion',
+    image: '/images/products/mud-squeezing-pug-mill.jpg',
+    imageAlt: 'Mud squeezing and mixing machine from Jiuyu Machinery',
+    imageLabel: 'Pug mill system',
+    specs: ['Mud mixing line', 'Customized outlet options', 'Continuous squeezing workflow'],
     accent: 'graphite',
     title: {
-      en: 'Material Feeding System',
-      zh: '给料系统',
+      en: 'Mud Squeezing Pug Mill',
+      zh: '挤泥搅拌机',
     },
     summary: {
-      en: 'Designed as an upstream support layer for continuous and coordinated line operation.',
-      zh: '作为产线前端的支撑设备，强调连续作业和协同效率。',
+      en: 'A combined mixing and extrusion machine suited to more complete clay preparation lines.',
+      zh: '兼顾搅拌与挤出能力，适合更完整的泥料准备和连续作业流程。',
     },
     detail: {
-      en: 'This product type helps demonstrate that Jiuyu is not showing isolated equipment only, but a more complete industrial understanding.',
-      zh: '这一类产品可以体现 Jiuyu 不只是卖单台设备，而是具备更完整的机械方案理解能力。',
+      en: 'This product gives the catalog a stronger systems story. It suggests Jiuyu can present coordinated processing capability instead of isolated equipment only.',
+      zh: '这类设备能让目录更像一个完整机械方案，而不是只展示零散单机，更适合建立品牌专业度。',
     },
   },
 ]
