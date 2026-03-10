@@ -1,18 +1,19 @@
 import { useParams } from 'react-router-dom'
 
-import { articles } from '../content/site'
+import { articles, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 
 export function ArticlePage() {
   const { slug } = useParams()
   const { locale } = useLocale()
+  const ui = uiCopy[locale]
   const article = articles.find((item) => item.slug === slug)
 
   if (!article) {
     return (
       <div className="py-14">
-        <p className="text-lg text-stone-300">{locale === 'zh' ? '未找到文章。' : 'Article not found.'}</p>
+        <p className="text-lg text-stone-300">{ui.articleMissing}</p>
       </div>
     )
   }
@@ -21,7 +22,7 @@ export function ArticlePage() {
     <div className="py-14">
       <PageSection className="max-w-[880px]">
         <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-          {article.tag}
+          {article.tag[locale]}
         </p>
         <h1 className="mt-3 font-['Oxanium'] text-[clamp(2.8rem,6vw,4.8rem)] leading-[0.94] text-stone-100">
           {article.title[locale]}

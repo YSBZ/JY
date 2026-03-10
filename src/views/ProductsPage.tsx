@@ -1,24 +1,21 @@
 import { Link } from 'react-router-dom'
 
-import { products } from '../content/site'
+import { products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
 
 export function ProductsPage() {
   const { locale } = useLocale()
+  const ui = uiCopy[locale]
 
   return (
     <div className="py-14">
       <PageSection>
         <SectionTitle
-          eyebrow="Product catalog"
-          title={locale === 'zh' ? '产品目录' : 'Product catalog'}
-          body={
-            locale === 'zh'
-              ? '官网产品分类将按品牌逻辑重新组织，而不是照搬平台店铺结构。'
-              : 'The website catalog should be organized around brand clarity rather than inherited marketplace structure.'
-          }
+          eyebrow={ui.productCatalogEyebrow}
+          title={ui.productCatalogTitle}
+          body={ui.productCatalogBody}
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
@@ -29,15 +26,15 @@ export function ProductsPage() {
               to={`/products/${product.slug}`}
             >
               <img
-                alt={product.imageAlt}
+                alt={product.imageAlt[locale]}
                 className="mb-4 h-52 w-full border border-white/10 object-cover"
                 src={product.image}
               />
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{product.category}</div>
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{product.category[locale]}</div>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{product.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>
               <ul className="mt-5 list-disc pl-5 text-base leading-7 text-stone-400">
-                {product.specs.map((spec) => (
+                {product.specs[locale].map((spec) => (
                   <li key={spec}>{spec}</li>
                 ))}
               </ul>

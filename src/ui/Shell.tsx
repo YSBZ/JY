@@ -3,7 +3,7 @@ import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-import { nav } from '../content/site'
+import { localeOptions, nav, shellCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import type { Locale } from '../content/site'
 
@@ -13,14 +13,14 @@ function LanguageToggle({ locale, onChange }: { locale: Locale; onChange: (local
       aria-label="Language switcher"
       className="inline-flex border border-white/10 bg-black/30 p-1"
       onValueChange={(value) => {
-        if (value === 'en' || value === 'zh') {
+        if (value === 'en' || value === 'zh' || value === 'ar' || value === 'ru') {
           onChange(value)
         }
       }}
       type="single"
       value={locale}
     >
-      {(['en', 'zh'] as const).map((value) => (
+      {localeOptions.map((value) => (
         <ToggleGroup.Item
           key={value}
           className="cursor-pointer px-3 py-2 text-xs font-semibold tracking-[0.24em] text-stone-400 uppercase transition data-[state=on]:bg-amber-300/15 data-[state=on]:text-stone-100"
@@ -56,6 +56,7 @@ function NavMenuLink({ href, children }: { href: string; children: ReactNode }) 
 export function Shell({ children }: { children: ReactNode }) {
   const { locale, setLocale } = useLocale()
   const items = nav[locale]
+  const copy = shellCopy[locale]
 
   return (
     <div className="mx-auto min-h-screen max-w-[1380px] px-3 py-4 sm:px-5">
@@ -67,9 +68,7 @@ export function Shell({ children }: { children: ReactNode }) {
           </span>
           <span className="flex flex-col gap-0.5">
             <strong className="text-base font-semibold tracking-[0.08em] text-stone-100">Jiuyu Machinery</strong>
-            <small className="text-sm text-stone-400">
-              {locale === 'zh' ? '国际机械品牌站' : 'Global machinery site'}
-            </small>
+            <small className="text-sm text-stone-400">{copy.subtitle}</small>
           </span>
         </Link>
 
@@ -85,12 +84,6 @@ export function Shell({ children }: { children: ReactNode }) {
 
         <div className="flex flex-wrap items-center gap-3 lg:justify-end">
           <LanguageToggle locale={locale} onChange={setLocale} />
-          <Link
-            className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
-            to="/contact"
-          >
-            {locale === 'zh' ? '联系' : 'Contact'}
-          </Link>
         </div>
       </header>
 
@@ -98,14 +91,12 @@ export function Shell({ children }: { children: ReactNode }) {
 
       <footer className="relative mt-6 mb-10 flex flex-col justify-between gap-6 border border-white/10 bg-black/75 px-6 py-6 backdrop-blur-xl lg:flex-row lg:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-            {locale === 'zh' ? '工业展示站首版' : 'Industrial site MVP'}
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">{copy.footerKicker}</p>
           <h2 className="mt-2 font-['Oxanium'] text-3xl text-stone-100">Jiuyu Machinery</h2>
         </div>
         <div className="grid gap-1 text-sm text-stone-400 lg:justify-items-end">
           <span>jiuyumachinery.com</span>
-          <span>{locale === 'zh' ? '海外访问优先' : 'Built for global reach'}</span>
+          <span>{copy.footerReach}</span>
         </div>
       </footer>
     </div>

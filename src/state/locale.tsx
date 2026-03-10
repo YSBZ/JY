@@ -16,11 +16,15 @@ function getInitialLocale(): Locale {
   }
 
   const stored = window.localStorage.getItem(storageKey)
-  if (stored === 'en' || stored === 'zh') {
+  if (stored === 'en' || stored === 'zh' || stored === 'ar' || stored === 'ru') {
     return stored
   }
 
-  return navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+  const browserLocale = navigator.language.toLowerCase()
+  if (browserLocale.startsWith('zh')) return 'zh'
+  if (browserLocale.startsWith('ar')) return 'ar'
+  if (browserLocale.startsWith('ru')) return 'ru'
+  return 'en'
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
@@ -28,7 +32,9 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     window.localStorage.setItem(storageKey, locale)
-    document.documentElement.lang = locale === 'zh' ? 'zh-CN' : 'en'
+    document.documentElement.lang =
+      locale === 'zh' ? 'zh-CN' : locale === 'ar' ? 'ar' : locale === 'ru' ? 'ru' : 'en'
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr'
   }, [locale])
 
   const value = useMemo(() => ({ locale, setLocale }), [locale])

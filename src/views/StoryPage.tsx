@@ -1,4 +1,4 @@
-import { companyCopy } from '../content/site'
+import { companyCopy, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -6,11 +6,12 @@ import { SectionTitle } from '../ui/SectionTitle'
 export function StoryPage() {
   const { locale } = useLocale()
   const copy = companyCopy[locale]
+  const ui = uiCopy[locale]
 
   return (
     <div className="py-14">
       <PageSection>
-        <SectionTitle eyebrow="Company" title={copy.title} body={copy.intro} />
+        <SectionTitle eyebrow={ui.companyEyebrow} title={copy.title} body={copy.intro} />
         <div className="grid gap-5 lg:grid-cols-3">
           {copy.pillars.map(([title, body]) => (
             <article key={title} className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">

@@ -1,4 +1,4 @@
-import { contactCopy } from '../content/site'
+import { contactCopy, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -6,11 +6,12 @@ import { SectionTitle } from '../ui/SectionTitle'
 export function ContactPage() {
   const { locale } = useLocale()
   const copy = contactCopy[locale]
+  const ui = uiCopy[locale]
 
   return (
     <div className="py-14">
       <PageSection>
-        <SectionTitle eyebrow="Inquiry" title={copy.title} body={copy.intro} />
+        <SectionTitle eyebrow={ui.inquiryEyebrow} title={copy.title} body={copy.intro} />
 
         <div className="grid gap-5 lg:grid-cols-[minmax(260px,0.9fr)_minmax(0,1.1fr)]">
           <div className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
@@ -27,17 +28,15 @@ export function ContactPage() {
           <form className="grid gap-4 border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">
-                {locale === 'zh' ? '姓名' : 'Name'}
+                {ui.formName}
               </span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
-                placeholder={locale === 'zh' ? '请输入姓名' : 'Your name'}
+                placeholder={ui.formNamePlaceholder}
               />
             </label>
             <label>
-              <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">
-                {locale === 'zh' ? '邮箱' : 'Email'}
-              </span>
+              <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formEmail}</span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
                 placeholder="name@company.com"
@@ -45,16 +44,10 @@ export function ContactPage() {
               />
             </label>
             <label>
-              <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">
-                {locale === 'zh' ? '需求内容' : 'Inquiry details'}
-              </span>
+              <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formDetails}</span>
               <textarea
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
-                placeholder={
-                  locale === 'zh'
-                    ? '请填写产品、工况、数量或地区需求'
-                    : 'Tell us the product, operating scenario, volume, and destination market'
-                }
+                placeholder={ui.formDetailsPlaceholder}
                 rows={6}
               />
             </label>
@@ -62,7 +55,7 @@ export function ContactPage() {
               type="button"
               className="inline-flex items-center justify-center border border-amber-200/80 bg-linear-to-br from-amber-200 to-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-black transition hover:-translate-y-0.5"
             >
-              {locale === 'zh' ? '提交需求' : 'Send inquiry'}
+              {ui.formSubmit}
             </button>
           </form>
         </div>

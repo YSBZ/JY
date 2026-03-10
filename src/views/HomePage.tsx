@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articles, homeCopy, products } from '../content/site'
+import { articles, homeCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -8,6 +8,7 @@ import { SectionTitle } from '../ui/SectionTitle'
 export function HomePage() {
   const { locale } = useLocale()
   const copy = homeCopy[locale]
+  const ui = uiCopy[locale]
 
   return (
     <div className="relative py-14">
@@ -39,17 +40,15 @@ export function HomePage() {
 
         <div className="relative min-h-[320px] overflow-hidden border border-white/10 bg-[linear-gradient(160deg,rgba(241,190,50,0.14),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent_55%),#111519]">
           <img
-            alt={products[0].imageAlt}
+            alt={products[0].imageAlt[locale]}
             className="h-full w-full object-cover opacity-80"
             src={products[0].image}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,17,19,0.18),rgba(15,17,19,0.72))]" />
           <div className="absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">Tracked output</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">{ui.trackedOutput}</span>
             <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">08</strong>
-            <p className="mt-3 text-base leading-6 text-stone-400">
-              {locale === 'zh' ? '首版建议精选设备数量' : 'Suggested flagship product count for launch'}
-            </p>
+            <p className="mt-3 text-base leading-6 text-stone-400">{ui.launchCount}</p>
           </div>
         </div>
       </PageSection>
@@ -83,17 +82,17 @@ export function HomePage() {
               to={`/products/${product.slug}`}
             >
               <img
-                alt={product.imageAlt}
+                alt={product.imageAlt[locale]}
                 className="mb-4 h-52 w-full border border-white/10 object-cover"
                 src={product.image}
               />
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
-                {product.category}
+                {product.category[locale]}
               </div>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{product.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>
               <ul className="mt-5 list-disc pl-5 text-base leading-7 text-stone-400">
-                {product.specs.map((spec) => (
+                {product.specs[locale].map((spec) => (
                   <li key={spec}>{spec}</li>
                 ))}
               </ul>
@@ -107,7 +106,7 @@ export function HomePage() {
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <p className="max-w-3xl text-lg leading-8 text-stone-400">{copy.storyBody}</p>
           <Link className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/story">
-            {locale === 'zh' ? '查看品牌介绍' : 'Read the brand story'}
+            {ui.storyLink}
           </Link>
         </div>
       </PageSection>
@@ -117,7 +116,7 @@ export function HomePage() {
         <div className="grid gap-5 lg:grid-cols-2">
           {articles.map((article) => (
             <article key={article.slug} className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag}</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag[locale]}</span>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
               <Link
