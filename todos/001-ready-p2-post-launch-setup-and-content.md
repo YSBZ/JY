@@ -105,6 +105,19 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - The next highest-leverage todo work is content structure, because it improves review quality without depending on Vercel, DNS, or account access
 - Reframing the catalog around product families is a better foundation than copying marketplace navigation directly
 
+### 2026-03-10 - Contact flow refinement pass
+
+**By:** Codex
+
+**Actions:**
+- Upgraded the contact page from a generic placeholder form to a structured inquiry surface
+- Added product selection, inquiry-type selection, and clickable email/WhatsApp links
+- Clarified in the UI that this remains a front-end preview until final deployment wiring is completed
+
+**Learnings:**
+- The current prototype benefits more from believable conversion structure than from adding more raw placeholder copy
+- Even before backend wiring exists, a more realistic inquiry flow makes review and stakeholder feedback much easier
+
 ## Notes
 
 - This todo exists because the user explicitly asked to defer the remaining work and focus on code plus local product images first.

@@ -60,13 +60,23 @@ export const uiCopy = {
     formName: 'Name',
     formNamePlaceholder: 'Your name',
     formEmail: 'Email',
+    formCompany: 'Company',
+    formCompanyPlaceholder: 'Your company',
+    formProduct: 'Product of interest',
+    formInquiryType: 'Inquiry type',
     formDetails: 'Inquiry details',
     formDetailsPlaceholder: 'Tell us the product, operating scenario, volume, and destination market',
+    formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Send inquiry',
+    formResponseNote: 'This is a front-end inquiry flow preview. Final email and form routing will be connected after deployment.',
     productPositioning: 'Positioning',
     productConfig: 'Configuration cues',
     productFamilyLabel: 'Product families',
     productAllFamilies: 'All',
+    inquiryTypeGeneral: 'General inquiry',
+    inquiryTypeQuote: 'Request quote',
+    inquiryTypeDistributor: 'Distributor / partner',
+    inquiryTypeAfterSales: 'After-sales support',
   },
   zh: {
     trackedOutput: '重点数量',
@@ -87,13 +97,23 @@ export const uiCopy = {
     formName: '姓名',
     formNamePlaceholder: '请输入姓名',
     formEmail: '邮箱',
+    formCompany: '公司',
+    formCompanyPlaceholder: '请输入公司名称',
+    formProduct: '关注产品',
+    formInquiryType: '询盘类型',
     formDetails: '需求内容',
     formDetailsPlaceholder: '请填写产品、工况、数量或地区需求',
+    formEmailPlaceholder: 'name@company.com',
     formSubmit: '提交需求',
+    formResponseNote: '当前是前端询盘流程预览。部署后会接入真实邮箱和表单流转。',
     productPositioning: '核心说明',
     productConfig: '配置方向',
     productFamilyLabel: '产品系列',
     productAllFamilies: '全部',
+    inquiryTypeGeneral: '常规咨询',
+    inquiryTypeQuote: '获取报价',
+    inquiryTypeDistributor: '渠道/合作',
+    inquiryTypeAfterSales: '售后支持',
   },
   ar: {
     trackedOutput: 'حجم الإطلاق',
@@ -114,13 +134,23 @@ export const uiCopy = {
     formName: 'الاسم',
     formNamePlaceholder: 'اسمك',
     formEmail: 'البريد الإلكتروني',
+    formCompany: 'الشركة',
+    formCompanyPlaceholder: 'اسم شركتك',
+    formProduct: 'المنتج المطلوب',
+    formInquiryType: 'نوع الاستفسار',
     formDetails: 'تفاصيل الاستفسار',
     formDetailsPlaceholder: 'اذكر المنتج، وسيناريو التشغيل، والكمية، والسوق المستهدف',
+    formEmailPlaceholder: 'name@company.com',
     formSubmit: 'إرسال الاستفسار',
+    formResponseNote: 'هذه معاينة لواجهة الاستفسار فقط. سيتم ربط البريد والمسار النهائي بعد النشر.',
     productPositioning: 'التموضع',
     productConfig: 'ملامح التكوين',
     productFamilyLabel: 'عائلات المنتجات',
     productAllFamilies: 'الكل',
+    inquiryTypeGeneral: 'استفسار عام',
+    inquiryTypeQuote: 'طلب عرض سعر',
+    inquiryTypeDistributor: 'موزع / شريك',
+    inquiryTypeAfterSales: 'دعم ما بعد البيع',
   },
   ru: {
     trackedOutput: 'Объем запуска',
@@ -143,13 +173,23 @@ export const uiCopy = {
     formName: 'Имя',
     formNamePlaceholder: 'Ваше имя',
     formEmail: 'Email',
+    formCompany: 'Компания',
+    formCompanyPlaceholder: 'Название компании',
+    formProduct: 'Интересующий продукт',
+    formInquiryType: 'Тип запроса',
     formDetails: 'Детали запроса',
     formDetailsPlaceholder: 'Укажите продукт, сценарий работы, объем и целевой рынок',
+    formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Отправить запрос',
+    formResponseNote: 'Сейчас это только превью фронтенд-формы. Реальная почта и маршрутизация будут подключены после деплоя.',
     productPositioning: 'Позиционирование',
     productConfig: 'Конфигурация',
     productFamilyLabel: 'Семейства продукции',
     productAllFamilies: 'Все',
+    inquiryTypeGeneral: 'Общий запрос',
+    inquiryTypeQuote: 'Запрос цены',
+    inquiryTypeDistributor: 'Дистрибьютор / партнер',
+    inquiryTypeAfterSales: 'Послепродажная поддержка',
   },
 } satisfies Record<
   Locale,
@@ -172,13 +212,23 @@ export const uiCopy = {
     formName: string
     formNamePlaceholder: string
     formEmail: string
+    formCompany: string
+    formCompanyPlaceholder: string
+    formProduct: string
+    formInquiryType: string
     formDetails: string
     formDetailsPlaceholder: string
+    formEmailPlaceholder: string
     formSubmit: string
+    formResponseNote: string
     productPositioning: string
     productConfig: string
     productFamilyLabel: string
     productAllFamilies: string
+    inquiryTypeGeneral: string
+    inquiryTypeQuote: string
+    inquiryTypeDistributor: string
+    inquiryTypeAfterSales: string
   }
 >
 
