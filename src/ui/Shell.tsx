@@ -62,15 +62,10 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="mx-auto min-h-screen max-w-[1380px] px-3 py-4 sm:px-5">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(241,190,50,0.12),transparent_24%),radial-gradient(circle_at_78%_0%,rgba(255,255,255,0.06),transparent_18%),linear-gradient(180deg,#111418,#090a0c_60%)]" />
       <header className="sticky top-4 z-20 grid items-center gap-5 border border-white/10 bg-black/70 px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:grid-cols-[auto_1fr_auto] lg:px-6">
-        <Link className="inline-flex items-center gap-3" to="/">
-          <span className="grid h-[52px] w-[52px] place-items-center border border-amber-300/30 bg-linear-to-br from-amber-300/12 to-white/[0.03] font-['Oxanium'] text-lg tracking-[0.18em] text-amber-300">
-            JM
-          </span>
-          <span className="flex flex-col gap-0.5">
-            <strong className="text-base font-semibold tracking-[0.08em] text-stone-100">Jiuyu Machinery</strong>
-            <small className="text-sm text-stone-400">{copy.subtitle}</small>
-          </span>
-        </Link>
+        <div className="flex flex-col gap-0.5">
+          <strong className="text-base font-semibold tracking-[0.08em] text-stone-100">Jiuyu Machinery</strong>
+          <small className="text-sm text-stone-400">{copy.subtitle}</small>
+        </div>
 
         <NavigationMenu.Root className="overflow-x-auto">
           <NavigationMenu.List className="flex flex-wrap justify-start gap-2 lg:justify-center">
@@ -84,6 +79,12 @@ export function Shell({ children }: { children: ReactNode }) {
 
         <div className="flex flex-wrap items-center gap-3 lg:justify-end">
           <LanguageToggle locale={locale} onChange={setLocale} />
+          <Link
+            className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+            to="/contact"
+          >
+            {items[items.length - 1]?.label ?? 'Contact'}
+          </Link>
         </div>
       </header>
 
