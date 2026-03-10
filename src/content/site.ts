@@ -1,5 +1,11 @@
 export type Locale = 'en' | 'zh'
 
+const assetBase = import.meta.env.BASE_URL
+
+function assetPath(path: string) {
+  return `${assetBase}${path.replace(/^\//, '')}`
+}
+
 export type Product = {
   slug: string
   category: string
@@ -159,7 +165,7 @@ export const products: Product[] = [
   {
     slug: 'mud-machine-diesel',
     category: 'Clay Processing',
-    image: '/images/products/mud-machine-diesel.jpg',
+    image: assetPath('/images/products/mud-machine-diesel.jpg'),
     imageAlt: 'Diesel mud machine from Jiuyu Machinery',
     imageLabel: 'Diesel mud machine',
     specs: ['Tractor engine drive', 'Adjustable extrusion speed', 'CE-ready equipment'],
@@ -180,7 +186,7 @@ export const products: Product[] = [
   {
     slug: 'clay-roller-manual',
     category: 'Forming',
-    image: '/images/products/clay-roller-manual.jpg',
+    image: assetPath('/images/products/clay-roller-manual.jpg'),
     imageAlt: 'Manual clay roller machine from Jiuyu Machinery',
     imageLabel: 'Manual clay roller',
     specs: ['No electricity required', 'Manual pressure control', 'Compact workshop footprint'],
@@ -201,7 +207,7 @@ export const products: Product[] = [
   {
     slug: 'mud-squeezing-pug-mill',
     category: 'Mixing & Extrusion',
-    image: '/images/products/mud-squeezing-pug-mill.jpg',
+    image: assetPath('/images/products/mud-squeezing-pug-mill.jpg'),
     imageAlt: 'Mud squeezing and mixing machine from Jiuyu Machinery',
     imageLabel: 'Pug mill system',
     specs: ['Mud mixing line', 'Customized outlet options', 'Continuous squeezing workflow'],
