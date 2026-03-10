@@ -65,6 +65,8 @@ export const uiCopy = {
     formSubmit: 'Send inquiry',
     productPositioning: 'Positioning',
     productConfig: 'Configuration cues',
+    productFamilyLabel: 'Product families',
+    productAllFamilies: 'All',
   },
   zh: {
     trackedOutput: '重点数量',
@@ -90,6 +92,8 @@ export const uiCopy = {
     formSubmit: '提交需求',
     productPositioning: '核心说明',
     productConfig: '配置方向',
+    productFamilyLabel: '产品系列',
+    productAllFamilies: '全部',
   },
   ar: {
     trackedOutput: 'حجم الإطلاق',
@@ -115,6 +119,8 @@ export const uiCopy = {
     formSubmit: 'إرسال الاستفسار',
     productPositioning: 'التموضع',
     productConfig: 'ملامح التكوين',
+    productFamilyLabel: 'عائلات المنتجات',
+    productAllFamilies: 'الكل',
   },
   ru: {
     trackedOutput: 'Объем запуска',
@@ -142,6 +148,8 @@ export const uiCopy = {
     formSubmit: 'Отправить запрос',
     productPositioning: 'Позиционирование',
     productConfig: 'Конфигурация',
+    productFamilyLabel: 'Семейства продукции',
+    productAllFamilies: 'Все',
   },
 } satisfies Record<
   Locale,
@@ -169,11 +177,37 @@ export const uiCopy = {
     formSubmit: string
     productPositioning: string
     productConfig: string
+    productFamilyLabel: string
+    productAllFamilies: string
   }
 >
 
+export type ProductFamily = 'clay-preparation' | 'forming-equipment' | 'mixing-systems'
+
+export const productFamilyCopy = {
+  'clay-preparation': {
+    en: 'Clay Preparation',
+    zh: '泥料准备',
+    ar: 'تحضير الطين',
+    ru: 'Подготовка глины',
+  },
+  'forming-equipment': {
+    en: 'Forming Equipment',
+    zh: '成型设备',
+    ar: 'معدات التشكيل',
+    ru: 'Формовочное оборудование',
+  },
+  'mixing-systems': {
+    en: 'Mixing Systems',
+    zh: '搅拌系统',
+    ar: 'أنظمة الخلط',
+    ru: 'Системы смешивания',
+  },
+} satisfies Record<ProductFamily, Record<Locale, string>>
+
 export type Product = {
   slug: string
+  family: ProductFamily
   category: Record<Locale, string>
   image: string
   imageAlt: Record<Locale, string>
@@ -422,6 +456,7 @@ export const contactCopy = {
 export const products: Product[] = [
   {
     slug: 'mud-machine-diesel',
+    family: 'clay-preparation',
     category: {
       en: 'Clay Processing',
       zh: '泥料处理',
@@ -469,6 +504,7 @@ export const products: Product[] = [
   },
   {
     slug: 'clay-roller-manual',
+    family: 'forming-equipment',
     category: {
       en: 'Forming',
       zh: '成型设备',
@@ -516,6 +552,7 @@ export const products: Product[] = [
   },
   {
     slug: 'mud-squeezing-pug-mill',
+    family: 'mixing-systems',
     category: {
       en: 'Mixing & Extrusion',
       zh: '搅拌与挤出',
