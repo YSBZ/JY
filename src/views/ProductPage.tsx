@@ -22,7 +22,7 @@ export function ProductPage() {
     <div className="max-w-[1100px] py-14">
       <PageSection
         className={[
-          'grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_280px]',
+          'grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_300px]',
           product.accent === 'amber'
             ? 'bg-[linear-gradient(180deg,rgba(241,190,50,0.14),transparent_50%),rgba(16,19,22,0.9)]'
             : product.accent === 'steel'
@@ -40,6 +40,15 @@ export function ProductPage() {
             {product.title[locale]}
           </h1>
           <p className="mt-4 text-lg leading-8 text-stone-400">{product.detail[locale]}</p>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            {product.specs[locale].map((spec, index) => (
+              <div key={spec} className="border border-white/10 bg-black/25 px-4 py-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{`0${index + 1}`}</div>
+                <p className="mt-2 text-base leading-6 text-stone-300">{spec}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex flex-col justify-end gap-2 border border-white/10 bg-white/[0.03] p-5">
           <img
@@ -66,6 +75,25 @@ export function ProductPage() {
             ))}
           </ul>
         </article>
+      </section>
+
+      <section className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_300px]">
+        <article className="border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_40%),rgba(16,19,22,0.9)] p-6 backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Use case framing</p>
+          <h2 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">Built to read as equipment, not as a listing.</h2>
+          <p className="mt-4 text-lg leading-8 text-stone-400">
+            The product page should help buyers understand the machine category, the practical configuration cues, and
+            the overall seriousness of Jiuyu as a supplier. Strong visual hierarchy matters as much as raw specs.
+          </p>
+        </article>
+        <aside className="border border-white/10 bg-black/40 p-6 backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Inquiry fit</p>
+          <div className="mt-4 grid gap-3 text-base leading-7 text-stone-300">
+            <p>Best used when the buyer already knows the machine family.</p>
+            <p>Supports first-pass evaluation before email or WhatsApp contact.</p>
+            <p>Leaves room for richer technical sheets in a later release.</p>
+          </div>
+        </aside>
       </section>
 
       <Link

@@ -118,6 +118,19 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - The current prototype benefits more from believable conversion structure than from adding more raw placeholder copy
 - Even before backend wiring exists, a more realistic inquiry flow makes review and stakeholder feedback much easier
 
+### 2026-03-10 - Core page design refinement
+
+**By:** Codex
+
+**Actions:**
+- Refined Story and Articles into fuller editorial-style layouts instead of simple content blocks
+- Upgraded Home and Product Detail to carry stronger industrial hierarchy and clearer information framing
+- Continued shipping all page-design work directly on `main` so GitHub Pages stays reviewable in real time
+
+**Learnings:**
+- The biggest quality gains now come from page composition and information hierarchy, not from adding more routes
+- Real-time publishing on `main` is the right workflow for this review stage because it keeps visual feedback immediate
+
 ## Notes
 
 - This todo exists because the user explicitly asked to defer the remaining work and focus on code plus local product images first.

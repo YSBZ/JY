@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articles, homeCopy, products, uiCopy } from '../content/site'
+import { articles, homeCopy, productFamilyCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -12,8 +12,8 @@ export function HomePage() {
 
   return (
     <div className="relative py-14">
-      <PageSection className="grid gap-8 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_50%),linear-gradient(180deg,rgba(241,190,50,0.06),transparent_40%)] lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,0.8fr)] lg:p-14">
-        <div>
+      <PageSection className="grid gap-8 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_50%),linear-gradient(180deg,rgba(241,190,50,0.06),transparent_40%)] lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:p-14">
+        <div className="relative">
           <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
             {copy.eyebrow}
           </p>
@@ -36,6 +36,19 @@ export function HomePage() {
               {copy.secondaryCta}
             </Link>
           </div>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            {[
+              ['01', 'Heavy-duty visual language'],
+              ['02', 'Global-ready reading structure'],
+              ['03', 'Direct inquiry path'],
+            ].map(([index, label]) => (
+              <div key={index} className="border border-white/10 bg-black/25 px-4 py-4 backdrop-blur-xl">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{index}</div>
+                <p className="mt-2 text-base leading-6 text-stone-300">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="relative min-h-[320px] overflow-hidden border border-white/10 bg-[linear-gradient(160deg,rgba(241,190,50,0.14),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent_55%),#111519]">
@@ -49,6 +62,12 @@ export function HomePage() {
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">{ui.trackedOutput}</span>
             <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">08</strong>
             <p className="mt-3 text-base leading-6 text-stone-400">{ui.launchCount}</p>
+          </div>
+          <div className="absolute top-5 left-5 z-10 border border-white/10 bg-black/70 px-4 py-3 backdrop-blur-xl">
+            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
+              {productFamilyCopy[products[0].family][locale]}
+            </div>
+            <div className="mt-2 font-['Oxanium'] text-2xl text-stone-100">{products[0].title[locale]}</div>
           </div>
         </div>
       </PageSection>
@@ -86,8 +105,10 @@ export function HomePage() {
                 className="mb-4 h-52 w-full border border-white/10 object-cover"
                 src={product.image}
               />
-              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
-                {product.category[locale]}
+              <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                <span className="text-amber-300">{productFamilyCopy[product.family][locale]}</span>
+                <span className="text-stone-500">/</span>
+                <span className="text-stone-400">{product.category[locale]}</span>
               </div>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{product.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>
@@ -103,11 +124,21 @@ export function HomePage() {
 
       <PageSection>
         <SectionTitle eyebrow="003" title={copy.storyTitle} />
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <p className="max-w-3xl text-lg leading-8 text-stone-400">{copy.storyBody}</p>
-          <Link className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/story">
-            {ui.storyLink}
-          </Link>
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_300px]">
+          <div className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
+            <p className="max-w-3xl text-lg leading-8 text-stone-400">{copy.storyBody}</p>
+          </div>
+          <div className="border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_38%),rgba(16,19,22,0.9)] p-6 backdrop-blur-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Identity frame</p>
+            <div className="mt-4 grid gap-3 text-base leading-7 text-stone-300">
+              <p>Dark material base</p>
+              <p>Strict mechanical geometry</p>
+              <p>Focused CAT-inspired yellow accents</p>
+            </div>
+            <Link className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/story">
+              {ui.storyLink}
+            </Link>
+          </div>
         </div>
       </PageSection>
 
