@@ -79,8 +79,8 @@ export function Shell({ children }: { children: ReactNode }) {
           <small className="text-sm text-stone-400">{copy.subtitle}</small>
         </div>
 
-        <NavigationMenu.Root className="overflow-x-auto">
-          <NavigationMenu.List className="flex flex-wrap justify-start gap-2 lg:justify-center">
+        <NavigationMenu.Root className="overflow-x-auto overflow-y-hidden">
+          <NavigationMenu.List className="flex min-w-max flex-nowrap justify-start gap-2 lg:min-w-0 lg:justify-center">
             {items.map((item) => (
               <NavMenuLink key={item.href} href={item.href}>
                 {item.label}
