@@ -11,26 +11,59 @@ export function ArticlesPage() {
 
   return (
     <div className="py-14">
-      <PageSection>
+      <PageSection className="overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_45%),linear-gradient(180deg,rgba(241,190,50,0.07),transparent_40%)]">
         <SectionTitle
           eyebrow={ui.articlesEyebrow}
           title={ui.articlesTitle}
           body={ui.articlesBody}
         />
-        <div className="grid gap-5 lg:grid-cols-2">
-          {articles.map((article) => (
-            <article key={article.slug} className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag[locale]}</span>
-              <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
-              <p className="mt-3 text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
-              <Link
-                className="mt-4 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
-                to={`/articles/${article.slug}`}
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_320px]">
+          <div className="grid gap-5">
+            {articles.map((article, index) => (
+              <article
+                key={article.slug}
+                className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:border-amber-300/25"
               >
-                {ui.articleOpen}
-              </Link>
-            </article>
-          ))}
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag[locale]}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">0{index + 1}</span>
+                </div>
+                <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
+                <p className="mt-3 max-w-3xl text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
+                  <span className="text-sm text-stone-500">{article.body[locale].length} blocks</span>
+                  <Link
+                    className="inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
+                    to={`/articles/${article.slug}`}
+                  >
+                    {ui.articleOpen}
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className="border border-white/10 bg-black/45 p-6 backdrop-blur-xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Editorial role</p>
+            <h3 className="mt-3 font-['Oxanium'] text-3xl leading-[0.95] text-stone-100">
+              The article tab builds trust before the first quote request.
+            </h3>
+            <p className="mt-4 text-lg leading-7 text-stone-400">
+              This section is not a blog for activity signals. It is a knowledge surface for product framing,
+              application context, and international buyer confidence.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {[
+                'Explain where a machine fits',
+                'Reduce ambiguity for first-time buyers',
+                'Give X traffic something worth reading',
+              ].map((item) => (
+                <div key={item} className="border border-white/10 bg-zinc-950/80 px-4 py-3 text-base text-stone-300">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </aside>
         </div>
       </PageSection>
     </div>
