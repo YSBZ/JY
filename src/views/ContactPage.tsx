@@ -1,4 +1,4 @@
-import { contactCopy, uiCopy } from '../content/site'
+import { contactCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -7,6 +7,12 @@ export function ContactPage() {
   const { locale } = useLocale()
   const copy = contactCopy[locale]
   const ui = uiCopy[locale]
+  const inquiryTypes = [
+    ui.inquiryTypeGeneral,
+    ui.inquiryTypeQuote,
+    ui.inquiryTypeDistributor,
+    ui.inquiryTypeAfterSales,
+  ]
 
   return (
     <div className="py-14">
@@ -20,7 +26,22 @@ export function ContactPage() {
                 <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
                   {label}
                 </span>
-                <strong className="text-lg text-stone-100">{value}</strong>
+                {label.toLowerCase().includes('mail') || label.includes('邮箱') || label.includes('البريد') ? (
+                  <a className="text-lg text-stone-100 transition hover:text-amber-300" href={`mailto:${value}`}>
+                    {value}
+                  </a>
+                ) : label.toLowerCase().includes('whatsapp') || label.includes('واتساب') ? (
+                  <a
+                    className="text-lg text-stone-100 transition hover:text-amber-300"
+                    href={`https://wa.me/${value.replace(/[^\d]/g, '')}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {value}
+                  </a>
+                ) : (
+                  <strong className="text-lg text-stone-100">{value}</strong>
+                )}
               </div>
             ))}
           </div>
@@ -39,10 +60,39 @@ export function ContactPage() {
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formEmail}</span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
-                placeholder="name@company.com"
+                placeholder={ui.formEmailPlaceholder}
                 type="email"
               />
             </label>
+            <label>
+              <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formCompany}</span>
+              <input
+                className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                placeholder={ui.formCompanyPlaceholder}
+              />
+            </label>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label>
+                <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formProduct}</span>
+                <select className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40">
+                  {products.map((product) => (
+                    <option key={product.slug} value={product.slug}>
+                      {product.title[locale]}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formInquiryType}</span>
+                <select className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40">
+                  {inquiryTypes.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formDetails}</span>
               <textarea
@@ -57,6 +107,7 @@ export function ContactPage() {
             >
               {ui.formSubmit}
             </button>
+            <p className="text-sm leading-6 text-stone-500">{ui.formResponseNote}</p>
           </form>
         </div>
       </PageSection>

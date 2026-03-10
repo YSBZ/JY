@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 
-import { products, uiCopy } from '../content/site'
+import { productFamilyCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 
@@ -31,9 +31,11 @@ export function ProductPage() {
         ].join(' ')}
       >
         <div>
-          <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
-            {product.category[locale]}
-          </p>
+          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em]">
+            <span className="text-amber-300">{productFamilyCopy[product.family][locale]}</span>
+            <span className="text-stone-500">/</span>
+            <span className="text-stone-400">{product.category[locale]}</span>
+          </div>
           <h1 className="mt-3 font-['Oxanium'] text-[clamp(3rem,7vw,5rem)] leading-[0.92] text-stone-100">
             {product.title[locale]}
           </h1>
@@ -46,7 +48,8 @@ export function ProductPage() {
             src={product.image}
           />
           <span className="text-sm text-stone-400">{product.imageLabel[locale]}</span>
-          <strong className="font-['Oxanium'] text-4xl text-amber-300">{product.category[locale]}</strong>
+          <strong className="font-['Oxanium'] text-4xl text-amber-300">{productFamilyCopy[product.family][locale]}</strong>
+          <span className="text-base text-stone-400">{product.category[locale]}</span>
         </div>
       </PageSection>
 

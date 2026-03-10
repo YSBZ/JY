@@ -1,5 +1,5 @@
 ---
-status: ready
+status: in_progress
 priority: p2
 issue_id: "001"
 tags: [deployment, dns, content, localization]
@@ -91,6 +91,32 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 **Learnings:**
 - The immediate priority is a GitHub-visible branded prototype with locally stored product images
 - Deployment and DNS should remain separate follow-up work to avoid blocking visual progress
+
+### 2026-03-10 - Content expansion branch started
+
+**By:** Codex
+
+**Actions:**
+- Created local development branch `content-expansion-v1` from the deployed `main`
+- Started the catalog refinement pass by regrouping products into site-owned product families
+- Added product family filtering to the catalog so the site starts reflecting Jiuyu's own information architecture
+
+**Learnings:**
+- The next highest-leverage todo work is content structure, because it improves review quality without depending on Vercel, DNS, or account access
+- Reframing the catalog around product families is a better foundation than copying marketplace navigation directly
+
+### 2026-03-10 - Contact flow refinement pass
+
+**By:** Codex
+
+**Actions:**
+- Upgraded the contact page from a generic placeholder form to a structured inquiry surface
+- Added product selection, inquiry-type selection, and clickable email/WhatsApp links
+- Clarified in the UI that this remains a front-end preview until final deployment wiring is completed
+
+**Learnings:**
+- The current prototype benefits more from believable conversion structure than from adding more raw placeholder copy
+- Even before backend wiring exists, a more realistic inquiry flow makes review and stakeholder feedback much easier
 
 ## Notes
 
