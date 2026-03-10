@@ -1,0 +1,74 @@
+import { Link, useParams } from 'react-router-dom'
+
+import { products } from '../content/site'
+import { useLocale } from '../state/locale'
+import { PageSection } from '../ui/PageSection'
+
+export function ProductPage() {
+  const { slug } = useParams()
+  const { locale } = useLocale()
+  const product = products.find((item) => item.slug === slug)
+
+  if (!product) {
+    return (
+      <div className="py-14">
+        <p className="text-lg text-stone-300">{locale === 'zh' ? '未找到产品。' : 'Product not found.'}</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="max-w-[1100px] py-14">
+      <PageSection
+        className={[
+          'grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_280px]',
+          product.accent === 'amber'
+            ? 'bg-[linear-gradient(180deg,rgba(241,190,50,0.14),transparent_50%),rgba(16,19,22,0.9)]'
+            : product.accent === 'steel'
+              ? 'bg-[linear-gradient(180deg,rgba(135,150,164,0.12),transparent_50%),rgba(16,19,22,0.9)]'
+              : 'bg-[linear-gradient(180deg,rgba(81,87,96,0.18),transparent_50%),rgba(16,19,22,0.9)]',
+        ].join(' ')}
+      >
+        <div>
+          <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+            {product.category}
+          </p>
+          <h1 className="mt-3 font-['Oxanium'] text-[clamp(3rem,7vw,5rem)] leading-[0.92] text-stone-100">
+            {product.title[locale]}
+          </h1>
+          <p className="mt-4 text-lg leading-8 text-stone-400">{product.detail[locale]}</p>
+        </div>
+        <div className="flex flex-col justify-end gap-2 border border-white/10 bg-white/[0.03] p-5">
+          <span className="text-sm text-stone-400">{product.imageLabel}</span>
+          <strong className="font-['Oxanium'] text-4xl text-amber-300">{product.category.toUpperCase()}</strong>
+        </div>
+      </PageSection>
+
+      <section className="mt-6 grid gap-5 lg:grid-cols-2">
+        <article className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
+          <h2 className="font-['Oxanium'] text-2xl text-stone-100">
+            {locale === 'zh' ? '核心说明' : 'Positioning'}
+          </h2>
+          <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>
+        </article>
+        <article className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
+          <h2 className="font-['Oxanium'] text-2xl text-stone-100">
+            {locale === 'zh' ? '配置方向' : 'Configuration cues'}
+          </h2>
+          <ul className="mt-4 list-disc pl-5 text-base leading-7 text-stone-400">
+            {product.specs.map((spec) => (
+              <li key={spec}>{spec}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <Link
+        className="mt-6 inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+        to="/contact"
+      >
+        {locale === 'zh' ? '咨询这款设备' : 'Ask about this machine'}
+      </Link>
+    </div>
+  )
+}

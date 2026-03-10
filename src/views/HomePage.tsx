@@ -1,0 +1,132 @@
+import { Link } from 'react-router-dom'
+
+import { articles, homeCopy, products } from '../content/site'
+import { useLocale } from '../state/locale'
+import { PageSection } from '../ui/PageSection'
+import { SectionTitle } from '../ui/SectionTitle'
+
+export function HomePage() {
+  const { locale } = useLocale()
+  const copy = homeCopy[locale]
+
+  return (
+    <div className="relative py-14">
+      <PageSection className="grid gap-8 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_50%),linear-gradient(180deg,rgba(241,190,50,0.06),transparent_40%)] lg:grid-cols-[minmax(0,1.2fr)_minmax(300px,0.8fr)] lg:p-14">
+        <div>
+          <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+            {copy.eyebrow}
+          </p>
+          <h1 className="mt-3 max-w-5xl font-['Oxanium'] text-[clamp(3rem,7vw,5.8rem)] leading-[0.92] text-balance text-stone-100">
+            {copy.title}
+          </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-400">{copy.intro}</p>
+
+          <div className="mt-7 flex flex-wrap gap-4">
+            <Link
+              className="inline-flex items-center justify-center border border-amber-200/80 bg-linear-to-br from-amber-200 to-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-black transition hover:-translate-y-0.5"
+              to="/products"
+            >
+              {copy.primaryCta}
+            </Link>
+            <Link
+              className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+              to="/contact"
+            >
+              {copy.secondaryCta}
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative min-h-[320px] overflow-hidden border border-white/10 bg-[linear-gradient(160deg,rgba(241,190,50,0.14),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent_55%),#111519]">
+          <div className="grid h-full grid-cols-2 gap-4 p-6">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div
+                key={index}
+                className="border border-white/[0.08] bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_35%),linear-gradient(45deg,rgba(241,190,50,0.12),transparent_35%)]"
+              />
+            ))}
+          </div>
+          <div className="absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">Tracked output</span>
+            <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">08</strong>
+            <p className="mt-3 text-base leading-6 text-stone-400">
+              {locale === 'zh' ? '首版建议精选设备数量' : 'Suggested flagship product count for launch'}
+            </p>
+          </div>
+        </div>
+      </PageSection>
+
+      <PageSection>
+        <SectionTitle eyebrow="001" title={copy.trustTitle} />
+        <div className="grid gap-5 lg:grid-cols-3">
+          {copy.trustItems.map((item) => (
+            <article key={item} className="border border-white/10 bg-white/[0.03] p-5">
+              <span className="mb-4 inline-flex h-0.5 w-6 bg-amber-300" />
+              <p className="text-lg leading-7 text-stone-400">{item}</p>
+            </article>
+          ))}
+        </div>
+      </PageSection>
+
+      <section className="mt-14">
+        <SectionTitle eyebrow="002" title={copy.productTitle} body={copy.storyBody} />
+        <div className="grid gap-5 lg:grid-cols-3">
+          {products.map((product) => (
+            <Link
+              key={product.slug}
+              className={[
+                'group relative overflow-hidden border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35',
+                product.accent === 'amber'
+                  ? 'bg-[linear-gradient(180deg,rgba(241,190,50,0.14),transparent_50%),rgba(16,19,22,0.9)]'
+                  : product.accent === 'steel'
+                    ? 'bg-[linear-gradient(180deg,rgba(135,150,164,0.12),transparent_50%),rgba(16,19,22,0.9)]'
+                    : 'bg-[linear-gradient(180deg,rgba(81,87,96,0.18),transparent_50%),rgba(16,19,22,0.9)]',
+              ].join(' ')}
+              to={`/products/${product.slug}`}
+            >
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
+                {product.category}
+              </div>
+              <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{product.title[locale]}</h3>
+              <p className="mt-3 text-lg leading-7 text-stone-400">{product.summary[locale]}</p>
+              <ul className="mt-5 list-disc pl-5 text-base leading-7 text-stone-400">
+                {product.specs.map((spec) => (
+                  <li key={spec}>{spec}</li>
+                ))}
+              </ul>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <PageSection>
+        <SectionTitle eyebrow="003" title={copy.storyTitle} />
+        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <p className="max-w-3xl text-lg leading-8 text-stone-400">{copy.storyBody}</p>
+          <Link className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/story">
+            {locale === 'zh' ? '查看品牌介绍' : 'Read the brand story'}
+          </Link>
+        </div>
+      </PageSection>
+
+      <section className="mt-14">
+        <SectionTitle eyebrow="004" title={copy.articleTitle} />
+        <div className="grid gap-5 lg:grid-cols-2">
+          {articles.map((article) => (
+            <article key={article.slug} className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag}</span>
+              <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
+              <p className="mt-3 text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
+              <Link
+                className="mt-4 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
+                to={`/articles/${article.slug}`}
+              >
+                {copy.articleLink}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}
