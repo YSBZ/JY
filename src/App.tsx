@@ -34,7 +34,7 @@ function RouteMetadata() {
   useEffect(() => {
     const path = location.pathname
     const siteUrl = new URL(path === '/' ? '/' : path, window.location.origin).toString()
-    const shareImage = new URL('/favicon.svg', window.location.origin).toString()
+    const shareImage = new URL('/og-image.svg', window.location.origin).toString()
     let title = 'Jiuyu Machinery'
     let description = home.intro
 
