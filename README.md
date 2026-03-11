@@ -45,6 +45,7 @@ npm run build
 - Import the `platform-release-prep` branch into Vercel for the first real-domain deployment pass.
 - Keep `main` as the GitHub Pages review branch until the production hostname is verified.
 - After `jiuyumachinery.com` is attached, revisit `public/sitemap.xml` if route scope expands.
+- Detailed handoff steps live in [docs/deployment/2026-03-11-platform-release-prep-runbook.md](/Users/ys/JY/docs/deployment/2026-03-11-platform-release-prep-runbook.md).
 
 ## Current Scope
 

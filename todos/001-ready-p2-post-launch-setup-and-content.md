@@ -182,6 +182,7 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - Removed the GitHub Pages workflow from this branch so release configuration is no longer split between two platforms
 - Switched the branch back to standard-domain routing and root-path Vite output
 - Added `robots.txt`, `sitemap.xml`, and `site.webmanifest` for `jiuyumachinery.com`
+- Added a deployment runbook covering Vercel import, DNS records, and first-pass verification
 
 **Learnings:**
 - Keeping the review build on `main` and the real deployment work on a separate branch reduces release risk
