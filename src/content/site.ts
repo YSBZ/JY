@@ -10,8 +10,8 @@ export const localeOptions = ['en', 'zh', 'ar', 'ru'] as const
 
 export const shellCopy = {
   en: {
-    subtitle: 'Global machinery site',
-    footerKicker: 'Industrial site release',
+    subtitle: 'Global industrial showcase',
+    footerKicker: 'Industrial brand site',
     footerReach: 'Prepared for global buyers',
     footerSignals: ['EN / ZH / AR / RU', 'Catalog-first structure', 'Inquiry-ready shell'],
     footerMode: 'Brand mode',
@@ -21,8 +21,8 @@ export const shellCopy = {
     footerPrimaryCta: 'Primary CTA',
   },
   zh: {
-    subtitle: '国际机械品牌站',
-    footerKicker: '工业展示站',
+    subtitle: '国际工业展示站',
+    footerKicker: '工业品牌站',
     footerReach: '面向全球买家准备',
     footerSignals: ['英文 / 中文 / 阿语 / 俄语', '目录优先结构', '可承接询盘的外壳'],
     footerMode: '品牌模式',
@@ -32,8 +32,8 @@ export const shellCopy = {
     footerPrimaryCta: '主要入口',
   },
   ar: {
-    subtitle: 'موقع عالمي للآلات',
-    footerKicker: 'موقع صناعي عالمي',
+    subtitle: 'عرض صناعي عالمي',
+    footerKicker: 'موقع علامة صناعية',
     footerReach: 'مجهز للمشترين العالميين',
     footerSignals: ['EN / ZH / AR / RU', 'هيكل يركز على الكتالوج', 'واجهة جاهزة للاستفسار'],
     footerMode: 'وضع العلامة',
@@ -43,8 +43,8 @@ export const shellCopy = {
     footerPrimaryCta: 'الدعوة الرئيسية',
   },
   ru: {
-    subtitle: 'Глобальный сайт машиностроения',
-    footerKicker: 'Промышленный сайт',
+    subtitle: 'Глобальная промышленная витрина',
+    footerKicker: 'Сайт промышленного бренда',
     footerReach: 'Подготовлено для глобальных покупателей',
     footerSignals: ['EN / ZH / AR / RU', 'Каталог как основа', 'Оболочка для запросов'],
     footerMode: 'Режим бренда',
@@ -638,7 +638,7 @@ export const homeCopy = {
       'Jiuyu Machinery presents heavy-duty equipment with a darker, more disciplined brand language. The site is designed to help global visitors understand who we are, what we build, and how to start a serious conversation.',
     primaryCta: 'Explore flagship products',
     secondaryCta: 'Start an inquiry',
-    trustTitle: 'What this first release needs to prove',
+    trustTitle: 'What the site needs to prove',
     trustItems: [
       'Jiuyu Machinery looks credible as an industrial brand, not a generic catalog.',
       'Global visitors can browse smoothly, especially from X and mobile devices.',
@@ -658,7 +658,7 @@ export const homeCopy = {
       'Jiuyu Machinery 以更克制、更工业化的品牌语言展示重型机械设备。这个站点的目标，是让全球访客快速理解我们是谁、做什么，以及如何高效建立联系。',
     primaryCta: '查看重点产品',
     secondaryCta: '发起询盘',
-    trustTitle: '首版必须证明的事情',
+    trustTitle: '这个站点必须证明的事情',
     trustItems: [
       'Jiuyu Machinery 要呈现为可信的工业品牌，而不是普通产品列表站。',
       '来自 X 和海外移动端的访客需要稳定、顺畅地浏览。',
@@ -678,7 +678,7 @@ export const homeCopy = {
       'تقدم Jiuyu Machinery معدات ثقيلة بلغة علامة أكثر انضباطًا وعمقًا. صُمم هذا الموقع لمساعدة الزوار العالميين على فهم من نحن، وما الذي نبنيه، وكيف يمكن بدء تواصل جاد بسرعة.',
     primaryCta: 'استكشف المنتجات الرئيسية',
     secondaryCta: 'ابدأ استفسارًا',
-    trustTitle: 'ما الذي يجب أن تثبته هذه النسخة الأولى',
+    trustTitle: 'ما الذي يجب أن يثبته هذا الموقع',
     trustItems: [
       'يجب أن تبدو Jiuyu Machinery علامة صناعية موثوقة لا كتالوجًا عامًا بلا شخصية.',
       'يجب أن يتصفح الزوار العالميون الموقع بسلاسة، خصوصًا من X والأجهزة المحمولة.',
@@ -698,7 +698,7 @@ export const homeCopy = {
       'Jiuyu Machinery показывает тяжелое оборудование через более собранный и индустриальный язык бренда. Сайт помогает международным посетителям быстро понять, кто мы, что производим и как начать предметный диалог.',
     primaryCta: 'Посмотреть флагманские продукты',
     secondaryCta: 'Отправить запрос',
-    trustTitle: 'Что должна доказать первая версия',
+    trustTitle: 'Что должен доказать сайт',
     trustItems: [
       'Jiuyu Machinery должна восприниматься как убедительный промышленный бренд, а не как безликий каталог.',
       'Международные посетители должны просматривать сайт плавно, особенно из X и с мобильных устройств.',
@@ -781,43 +781,43 @@ export const companyCopy = {
 
 export const contactCopy = {
   en: {
-    title: 'Open an inquiry',
+    title: 'Start an inquiry',
     intro:
-      'The contact flow should stay direct. Email, WhatsApp, and a lightweight form are enough for the first release.',
+      'The contact path should stay direct. Email, WhatsApp, and a lightweight form are enough to start a serious conversation.',
     channels: [
       ['Email', 'sales@jiuyumachinery.com'],
       ['WhatsApp', 'Available after first contact'],
-      ['Response', 'Structured replies within one business day'],
+      ['Response', 'Structured follow-up within one business day'],
     ],
   },
   zh: {
     title: '发起询盘',
     intro:
-      '首版联系链路保持直接高效即可。邮箱、WhatsApp 和轻量表单已经足够承接第一批海外访客。',
+      '联系链路保持直接高效即可。邮箱、WhatsApp 和轻量表单已经足够承接海外买家沟通。',
     channels: [
       ['邮箱', 'sales@jiuyumachinery.com'],
       ['WhatsApp', '初次联系后提供'],
-      ['响应', '一个工作日内进行结构化回复'],
+      ['响应', '一个工作日内进行清晰回复'],
     ],
   },
   ar: {
     title: 'افتح استفسارًا',
     intro:
-      'يجب أن يبقى مسار التواصل مباشرًا. البريد الإلكتروني وWhatsApp والنموذج الخفيف تكفي للنسخة الأولى.',
+      'يجب أن يبقى مسار التواصل مباشرًا. البريد الإلكتروني وWhatsApp والنموذج الخفيف تكفي لبدء تواصل جاد.',
     channels: [
       ['البريد', 'sales@jiuyumachinery.com'],
       ['واتساب', 'متاح بعد أول تواصل'],
-      ['الاستجابة', 'رد منظم خلال يوم عمل واحد'],
+      ['الاستجابة', 'متابعة واضحة خلال يوم عمل واحد'],
     ],
   },
   ru: {
-    title: 'Открыть запрос',
+    title: 'Начать запрос',
     intro:
-      'Контактный путь должен оставаться прямым. Email, WhatsApp и легкая форма достаточно хороши для первой версии.',
+      'Контактный путь должен оставаться прямым. Email, WhatsApp и легкая форма достаточно хороши для начала предметного диалога.',
     channels: [
       ['Email', 'sales@jiuyumachinery.com'],
       ['WhatsApp', 'Доступен после первого контакта'],
-      ['Ответ', 'Структурированный ответ в течение одного рабочего дня'],
+      ['Ответ', 'Понятный ответ в течение одного рабочего дня'],
     ],
   },
 } satisfies Record<
