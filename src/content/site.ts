@@ -771,7 +771,7 @@ export const contactCopy = {
       'The contact flow should stay direct. Email, WhatsApp, and a lightweight form are enough for the first release.',
     channels: [
       ['Email', 'sales@jiuyumachinery.com'],
-      ['WhatsApp', '+86 188 0000 0000'],
+      ['WhatsApp', 'Available after first contact'],
       ['Response', 'Structured replies within one business day'],
     ],
   },
@@ -781,7 +781,7 @@ export const contactCopy = {
       '首版联系链路保持直接高效即可。邮箱、WhatsApp 和轻量表单已经足够承接第一批海外访客。',
     channels: [
       ['邮箱', 'sales@jiuyumachinery.com'],
-      ['WhatsApp', '+86 188 0000 0000'],
+      ['WhatsApp', '初次联系后提供'],
       ['响应', '一个工作日内进行结构化回复'],
     ],
   },
@@ -791,7 +791,7 @@ export const contactCopy = {
       'يجب أن يبقى مسار التواصل مباشرًا. البريد الإلكتروني وWhatsApp والنموذج الخفيف تكفي للنسخة الأولى.',
     channels: [
       ['البريد', 'sales@jiuyumachinery.com'],
-      ['واتساب', '+86 188 0000 0000'],
+      ['واتساب', 'متاح بعد أول تواصل'],
       ['الاستجابة', 'رد منظم خلال يوم عمل واحد'],
     ],
   },
@@ -801,7 +801,7 @@ export const contactCopy = {
       'Контактный путь должен оставаться прямым. Email, WhatsApp и легкая форма достаточно хороши для первой версии.',
     channels: [
       ['Email', 'sales@jiuyumachinery.com'],
-      ['WhatsApp', '+86 188 0000 0000'],
+      ['WhatsApp', 'Доступен после первого контакта'],
       ['Ответ', 'Структурированный ответ в течение одного рабочего дня'],
     ],
   },

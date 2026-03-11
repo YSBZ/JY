@@ -34,7 +34,7 @@ export function ContactPage() {
                       <a className="text-lg text-stone-100 transition hover:text-amber-300" href={`mailto:${value}`}>
                         {value}
                       </a>
-                    ) : label.toLowerCase().includes('whatsapp') || label.includes('واتساب') ? (
+                    ) : (label.toLowerCase().includes('whatsapp') || label.includes('واتساب')) && /\d/.test(value) ? (
                       <a
                         className="text-lg text-stone-100 transition hover:text-amber-300"
                         href={`https://wa.me/${value.replace(/[^\d]/g, '')}`}
@@ -43,6 +43,8 @@ export function ContactPage() {
                       >
                         {value}
                       </a>
+                    ) : label.toLowerCase().includes('whatsapp') || label.includes('واتساب') ? (
+                      <strong className="text-lg text-stone-100">{value}</strong>
                     ) : (
                       <strong className="text-lg text-stone-100">{value}</strong>
                     )}
