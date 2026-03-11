@@ -14,10 +14,10 @@ export const shellCopy = {
     footerKicker: 'Industrial site release',
     footerReach: 'Built for global reach',
     footerSignals: ['EN / ZH / AR / RU', 'Catalog-first structure', 'Inquiry-ready shell'],
-    footerChannel: 'Channel',
-    footerChannelValue: 'GitHub Pages',
-    footerDomainStatus: 'Domain status',
-    footerDomainStatusValue: 'Pending custom domain',
+    footerMode: 'Brand mode',
+    footerModeValue: 'Industrial showcase',
+    footerCatalog: 'Catalog strategy',
+    footerCatalogValue: 'Family-led structure',
     footerPrimaryCta: 'Primary CTA',
   },
   zh: {
@@ -25,10 +25,10 @@ export const shellCopy = {
     footerKicker: '工业展示站',
     footerReach: '海外访问优先',
     footerSignals: ['英文 / 中文 / 阿语 / 俄语', '目录优先结构', '可承接询盘的外壳'],
-    footerChannel: '渠道',
-    footerChannelValue: 'GitHub Pages',
-    footerDomainStatus: '域名状态',
-    footerDomainStatusValue: '等待自定义域名接入',
+    footerMode: '品牌模式',
+    footerModeValue: '工业展示',
+    footerCatalog: '目录策略',
+    footerCatalogValue: '产品家族驱动',
     footerPrimaryCta: '主要入口',
   },
   ar: {
@@ -36,10 +36,10 @@ export const shellCopy = {
     footerKicker: 'موقع صناعي عالمي',
     footerReach: 'مصمم للوصول العالمي',
     footerSignals: ['EN / ZH / AR / RU', 'هيكل يركز على الكتالوج', 'واجهة جاهزة للاستفسار'],
-    footerChannel: 'القناة',
-    footerChannelValue: 'GitHub Pages',
-    footerDomainStatus: 'حالة النطاق',
-    footerDomainStatusValue: 'بانتظار ربط النطاق المخصص',
+    footerMode: 'وضع العلامة',
+    footerModeValue: 'عرض صناعي',
+    footerCatalog: 'استراتيجية الكتالوج',
+    footerCatalogValue: 'هيكل تقوده العائلات',
     footerPrimaryCta: 'الدعوة الرئيسية',
   },
   ru: {
@@ -47,10 +47,10 @@ export const shellCopy = {
     footerKicker: 'Промышленный сайт',
     footerReach: 'Сайт для глобальной аудитории',
     footerSignals: ['EN / ZH / AR / RU', 'Каталог как основа', 'Оболочка для запросов'],
-    footerChannel: 'Канал',
-    footerChannelValue: 'GitHub Pages',
-    footerDomainStatus: 'Статус домена',
-    footerDomainStatusValue: 'Ожидает подключения собственного домена',
+    footerMode: 'Режим бренда',
+    footerModeValue: 'Промышленная витрина',
+    footerCatalog: 'Стратегия каталога',
+    footerCatalogValue: 'Структура по семействам',
     footerPrimaryCta: 'Главный CTA',
   },
 } satisfies Record<
@@ -60,10 +60,10 @@ export const shellCopy = {
     footerKicker: string
     footerReach: string
     footerSignals: string[]
-    footerChannel: string
-    footerChannelValue: string
-    footerDomainStatus: string
-    footerDomainStatusValue: string
+    footerMode: string
+    footerModeValue: string
+    footerCatalog: string
+    footerCatalogValue: string
     footerPrimaryCta: string
   }
 >

@@ -125,12 +125,12 @@ export function Shell({ children }: { children: ReactNode }) {
           </div>
           <div className="grid gap-3 border border-white/10 bg-zinc-950/70 px-5 py-4 text-sm text-stone-400 lg:min-w-[320px]">
             <div className="flex items-center justify-between gap-4">
-              <span>{copy.footerChannel}</span>
-              <span className="text-stone-100">{copy.footerChannelValue}</span>
+              <span>{copy.footerMode}</span>
+              <span className="text-stone-100">{copy.footerModeValue}</span>
             </div>
             <div className="flex items-center justify-between gap-4">
-              <span>{copy.footerDomainStatus}</span>
-              <span className="text-stone-100">{copy.footerDomainStatusValue}</span>
+              <span>{copy.footerCatalog}</span>
+              <span className="text-stone-100">{copy.footerCatalogValue}</span>
             </div>
             <div className="flex items-center justify-between gap-4">
               <span>{copy.footerPrimaryCta}</span>
