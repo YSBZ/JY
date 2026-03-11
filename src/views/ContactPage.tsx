@@ -37,7 +37,7 @@ export function ContactPage() {
     if (!emailTarget) return
 
     const productLabel = products.find((product) => product.slug === form.product)?.title[locale] ?? form.product
-    const subject = `${form.inquiryType} - ${productLabel} - ${form.company || form.name || 'Jiuyu Inquiry'}`
+    const subject = `${form.inquiryType} - ${productLabel} - ${form.company || form.name || ui.inquirySubjectFallback}`
     const body = [
       `${ui.formName}: ${form.name || '-'}`,
       `${ui.formEmail}: ${form.email || '-'}`,

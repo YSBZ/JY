@@ -116,6 +116,7 @@ export const uiCopy = {
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Create inquiry email',
     formResponseNote: 'Submitting this form opens a structured email draft for Jiuyu Machinery follow-up.',
+    inquirySubjectFallback: 'Jiuyu inquiry',
     productPositioning: 'Positioning',
     productConfig: 'Configuration cues',
     productFamilyLabel: 'Product families',
@@ -164,6 +165,7 @@ export const uiCopy = {
     formEmailPlaceholder: 'name@company.com',
     formSubmit: '生成询盘邮件',
     formResponseNote: '提交后会打开一封结构化邮件草稿，方便 Jiuyu Machinery 继续跟进。',
+    inquirySubjectFallback: 'Jiuyu 询盘',
     productPositioning: '核心说明',
     productConfig: '配置方向',
     productFamilyLabel: '产品系列',
@@ -212,6 +214,7 @@ export const uiCopy = {
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'إنشاء بريد الاستفسار',
     formResponseNote: 'عند الإرسال سيتم فتح مسودة بريد منظمة لتسهيل متابعة Jiuyu Machinery.',
+    inquirySubjectFallback: 'استفسار Jiuyu',
     productPositioning: 'التموضع',
     productConfig: 'ملامح التكوين',
     productFamilyLabel: 'عائلات المنتجات',
@@ -264,6 +267,7 @@ export const uiCopy = {
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Создать письмо запроса',
     formResponseNote: 'После отправки откроется структурированный черновик письма для дальнейшего ответа Jiuyu Machinery.',
+    inquirySubjectFallback: 'Запрос Jiuyu',
     productPositioning: 'Позиционирование',
     productConfig: 'Конфигурация',
     productFamilyLabel: 'Семейства продукции',
@@ -314,6 +318,7 @@ export const uiCopy = {
     formEmailPlaceholder: string
     formSubmit: string
     formResponseNote: string
+    inquirySubjectFallback: string
     productPositioning: string
     productConfig: string
     productFamilyLabel: string
