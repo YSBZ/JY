@@ -232,6 +232,253 @@ export const uiCopy = {
   }
 >
 
+export const homeDesignCopy = {
+  en: {
+    signals: ['Heavy-duty visual language', 'Global-ready reading structure', 'Direct inquiry path'],
+    identityFrame: 'Identity frame',
+    identityItems: ['Dark material base', 'Strict mechanical geometry', 'Focused CAT-inspired yellow accents'],
+  },
+  zh: {
+    signals: ['重工业视觉语言', '面向国际阅读的结构', '直接可用的询盘路径'],
+    identityFrame: '品牌骨架',
+    identityItems: ['深色工业基底', '严格的机械几何感', '聚焦式工程黄点缀'],
+  },
+  ar: {
+    signals: ['لغة بصرية ثقيلة', 'هيكل قراءة جاهز للعالم', 'مسار استفسار مباشر'],
+    identityFrame: 'إطار الهوية',
+    identityItems: ['قاعدة داكنة بطابع صناعي', 'هندسة ميكانيكية صارمة', 'لمسات صفراء مستوحاة من CAT'],
+  },
+  ru: {
+    signals: ['Тяжелый визуальный язык', 'Структура чтения для глобальной аудитории', 'Прямой путь к запросу'],
+    identityFrame: 'Каркас идентичности',
+    identityItems: ['Темная индустриальная база', 'Строгая механическая геометрия', 'Акцентный желтый в духе CAT'],
+  },
+} satisfies Record<Locale, { signals: string[]; identityFrame: string; identityItems: string[] }>
+
+export const storyDesignCopy = {
+  en: {
+    signalLabel: 'Signal',
+    brandPosture: 'Brand posture',
+    brandPostureValue: 'Industrial / direct',
+    catalogLogic: 'Catalog logic',
+    catalogLogicValue: 'Family-first',
+    globalReading: 'Global reading',
+    globalReadingValue: 'EN + multi-language',
+    positioning: 'Positioning',
+    positioningTitle: 'A sharper global shell around practical machinery.',
+    positioningBody:
+      'Jiuyu does not need a generic export-site tone. The stronger move is a disciplined industrial voice that makes products easier to trust, easier to compare, and easier to inquire about from abroad.',
+    siteShouldDo: 'What the site should do',
+    siteGoals: [
+      'Show serious equipment without catalog clutter',
+      'Turn social traffic into product understanding',
+      'Support inquiries without overcomplicating the path',
+      'Leave room for more products and more languages',
+    ],
+    nextPath: 'Next path',
+    nextTitle: 'From brand story to product depth.',
+    exploreProducts: 'Explore products',
+  },
+  zh: {
+    signalLabel: '信号',
+    brandPosture: '品牌姿态',
+    brandPostureValue: '工业 / 直接',
+    catalogLogic: '目录逻辑',
+    catalogLogicValue: '产品家族优先',
+    globalReading: '全球阅读',
+    globalReadingValue: '英文 + 多语言',
+    positioning: '定位',
+    positioningTitle: '为务实机械能力包上一层更锋利的全球化外壳。',
+    positioningBody:
+      'Jiuyu 不需要普通外贸站的口气。更强的方向是建立克制、直接的工业表达，让产品更容易被信任、比较和询盘。',
+    siteShouldDo: '网站应该完成什么',
+    siteGoals: ['展示严肃设备而非杂乱目录', '把社交流量转成产品理解', '承接询盘但不过度复杂', '为更多产品和语言预留空间'],
+    nextPath: '下一步',
+    nextTitle: '从品牌叙事进入更深的产品表达。',
+    exploreProducts: '查看产品',
+  },
+  ar: {
+    signalLabel: 'إشارة',
+    brandPosture: 'وضع العلامة',
+    brandPostureValue: 'صناعي / مباشر',
+    catalogLogic: 'منطق الكتالوج',
+    catalogLogicValue: 'الأسرة أولًا',
+    globalReading: 'القراءة العالمية',
+    globalReadingValue: 'الإنجليزية + تعدد اللغات',
+    positioning: 'التموضع',
+    positioningTitle: 'غلاف عالمي أكثر حدة حول آلات عملية.',
+    positioningBody:
+      'لا تحتاج Jiuyu إلى نبرة مواقع التصدير العامة. الاتجاه الأقوى هو صوت صناعي منضبط يجعل المنتجات أسهل في الثقة والمقارنة والاستفسار.',
+    siteShouldDo: 'ما الذي يجب أن يفعله الموقع',
+    siteGoals: [
+      'عرض معدات جدية دون فوضى الكتالوج',
+      'تحويل زيارات التواصل إلى فهم للمنتج',
+      'دعم الاستفسارات دون تعقيد المسار',
+      'ترك مساحة لمزيد من المنتجات واللغات',
+    ],
+    nextPath: 'المسار التالي',
+    nextTitle: 'من قصة العلامة إلى عمق المنتج.',
+    exploreProducts: 'استكشاف المنتجات',
+  },
+  ru: {
+    signalLabel: 'Сигнал',
+    brandPosture: 'Позиция бренда',
+    brandPostureValue: 'Индустриально / прямо',
+    catalogLogic: 'Логика каталога',
+    catalogLogicValue: 'Сначала семейство',
+    globalReading: 'Глобальное чтение',
+    globalReadingValue: 'EN + мультиязычность',
+    positioning: 'Позиционирование',
+    positioningTitle: 'Более четкая глобальная оболочка вокруг практичной техники.',
+    positioningBody:
+      'Jiuyu не нужен тон типового экспортного сайта. Сильнее работает собранный индустриальный голос, который делает продукты понятнее, убедительнее и ближе к запросу.',
+    siteShouldDo: 'Что должен делать сайт',
+    siteGoals: [
+      'Показывать серьезную технику без шума каталога',
+      'Превращать соцтрафик в понимание продукта',
+      'Поддерживать запросы без лишней сложности',
+      'Оставлять место для новых продуктов и языков',
+    ],
+    nextPath: 'Следующий шаг',
+    nextTitle: 'От истории бренда к глубине продукта.',
+    exploreProducts: 'Смотреть продукты',
+  },
+} satisfies Record<
+  Locale,
+  {
+    signalLabel: string
+    brandPosture: string
+    brandPostureValue: string
+    catalogLogic: string
+    catalogLogicValue: string
+    globalReading: string
+    globalReadingValue: string
+    positioning: string
+    positioningTitle: string
+    positioningBody: string
+    siteShouldDo: string
+    siteGoals: string[]
+    nextPath: string
+    nextTitle: string
+    exploreProducts: string
+  }
+>
+
+export const articleDesignCopy = {
+  en: {
+    blocksSuffix: 'blocks',
+    editorialRole: 'Editorial role',
+    editorialTitle: 'The article tab builds trust before the first quote request.',
+    editorialBody:
+      'This section is not a blog for activity signals. It is a knowledge surface for product framing, application context, and international buyer confidence.',
+    editorialPoints: [
+      'Explain where a machine fits',
+      'Reduce ambiguity for first-time buyers',
+      'Give X traffic something worth reading',
+    ],
+    readingIntent: 'Reading intent',
+    readingPoints: [
+      'Built to support product understanding, not content volume.',
+      'Short, direct articles match the industrial tone of the site.',
+      'Future long-form knowledge pieces can expand from this structure.',
+    ],
+  },
+  zh: {
+    blocksSuffix: '段',
+    editorialRole: '栏目角色',
+    editorialTitle: '文章栏目在第一次报价请求之前建立信任。',
+    editorialBody: '这里不是为了显得活跃而写博客，而是为产品理解、应用场景和国际买家信心服务的知识界面。',
+    editorialPoints: ['解释设备适合什么场景', '减少首次买家的理解偏差', '让 X 导流过来的访客有内容可读'],
+    readingIntent: '阅读意图',
+    readingPoints: ['服务产品理解，而不是追求内容量', '短而直接的文章更符合工业站气质', '后续可在此基础上扩展长文知识内容'],
+  },
+  ar: {
+    blocksSuffix: 'مقاطع',
+    editorialRole: 'الدور التحريري',
+    editorialTitle: 'قسم المقالات يبني الثقة قبل أول طلب عرض سعر.',
+    editorialBody: 'هذا القسم ليس مدونة لإظهار النشاط، بل مساحة معرفة لشرح المنتج وسياق الاستخدام وتعزيز ثقة المشتري الدولي.',
+    editorialPoints: ['شرح أين تناسب كل آلة', 'تقليل الغموض للمشتري لأول مرة', 'منح زوار X شيئًا يستحق القراءة'],
+    readingIntent: 'نية القراءة',
+    readingPoints: ['مصمم لدعم فهم المنتج لا لتكديس المحتوى', 'المقالات القصيرة والمباشرة تلائم النبرة الصناعية', 'يمكن توسيع هذا الهيكل لاحقًا إلى مقالات أطول'],
+  },
+  ru: {
+    blocksSuffix: 'блоков',
+    editorialRole: 'Редакционная роль',
+    editorialTitle: 'Раздел статей создает доверие еще до первого запроса цены.',
+    editorialBody: 'Это не блог ради признаков активности, а слой знаний для понимания продукта, сценариев применения и уверенности международного покупателя.',
+    editorialPoints: ['Объяснять, где машина уместна', 'Снижать неоднозначность для первого покупателя', 'Давать трафику из X что-то стоящее для чтения'],
+    readingIntent: 'Задача чтения',
+    readingPoints: ['Раздел поддерживает понимание продукта, а не объем контента', 'Короткие прямые статьи соответствуют индустриальному тону сайта', 'Позже эту структуру можно расширить в длинные материалы'],
+  },
+} satisfies Record<
+  Locale,
+  {
+    blocksSuffix: string
+    editorialRole: string
+    editorialTitle: string
+    editorialBody: string
+    editorialPoints: string[]
+    readingIntent: string
+    readingPoints: string[]
+  }
+>
+
+export const productDesignCopy = {
+  en: {
+    useCaseFraming: 'Use case framing',
+    useCaseTitle: 'Built to read as equipment, not as a listing.',
+    useCaseBody:
+      'The product page should help buyers understand the machine category, the practical configuration cues, and the overall seriousness of Jiuyu as a supplier. Strong visual hierarchy matters as much as raw specs.',
+    inquiryFit: 'Inquiry fit',
+    inquiryPoints: [
+      'Best used when the buyer already knows the machine family.',
+      'Supports first-pass evaluation before email or WhatsApp contact.',
+      'Leaves room for richer technical sheets in a later release.',
+    ],
+  },
+  zh: {
+    useCaseFraming: '使用场景表达',
+    useCaseTitle: '让页面读起来像设备介绍，而不是一条商品 listing。',
+    useCaseBody:
+      '产品页应帮助买家理解设备类别、关键配置方向，以及 Jiuyu 作为供应方的专业度。清晰的信息层级和原始参数同样重要。',
+    inquiryFit: '询盘适配',
+    inquiryPoints: ['适合已经知道设备家族的大致买家', '在邮件或 WhatsApp 前支持首轮判断', '为后续更完整的技术资料页预留空间'],
+  },
+  ar: {
+    useCaseFraming: 'صياغة الاستخدام',
+    useCaseTitle: 'يجب أن تُقرأ الصفحة كصفحة معدات لا كقائمة بيع.',
+    useCaseBody:
+      'يجب أن تساعد صفحة المنتج المشتري على فهم فئة الآلة وإشارات التكوين العملية وجدية Jiuyu كمورد. التسلسل البصري القوي مهم بقدر أهمية المواصفات.',
+    inquiryFit: 'ملاءمة الاستفسار',
+    inquiryPoints: [
+      'أفضل عندما يعرف المشتري عائلة الآلة مسبقًا',
+      'تدعم التقييم الأولي قبل البريد أو WhatsApp',
+      'تترك مساحة لملفات تقنية أعمق في الإصدارات اللاحقة',
+    ],
+  },
+  ru: {
+    useCaseFraming: 'Подача применения',
+    useCaseTitle: 'Страница должна читаться как страница оборудования, а не как listing.',
+    useCaseBody:
+      'Страница продукта должна помогать понять категорию машины, практические конфигурационные ориентиры и серьезность Jiuyu как поставщика. Сильная иерархия так же важна, как и сами спецификации.',
+    inquiryFit: 'Соответствие запросу',
+    inquiryPoints: [
+      'Лучше всего работает, когда покупатель уже знает семейство машины',
+      'Поддерживает первую оценку до email или WhatsApp',
+      'Оставляет место для более подробных техлистов в следующем релизе',
+    ],
+  },
+} satisfies Record<
+  Locale,
+  {
+    useCaseFraming: string
+    useCaseTitle: string
+    useCaseBody: string
+    inquiryFit: string
+    inquiryPoints: string[]
+  }
+>
+
 export type ProductFamily = 'clay-preparation' | 'forming-equipment' | 'mixing-systems'
 
 export const productFamilyCopy = {

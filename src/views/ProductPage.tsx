@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 
-import { productFamilyCopy, products, uiCopy } from '../content/site'
+import { productDesignCopy, productFamilyCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 
@@ -8,6 +8,7 @@ export function ProductPage() {
   const { slug } = useParams()
   const { locale } = useLocale()
   const ui = uiCopy[locale]
+  const design = productDesignCopy[locale]
   const product = products.find((item) => item.slug === slug)
 
   if (!product) {
@@ -79,19 +80,16 @@ export function ProductPage() {
 
       <section className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_300px]">
         <article className="border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_40%),rgba(16,19,22,0.9)] p-6 backdrop-blur-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Use case framing</p>
-          <h2 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">Built to read as equipment, not as a listing.</h2>
-          <p className="mt-4 text-lg leading-8 text-stone-400">
-            The product page should help buyers understand the machine category, the practical configuration cues, and
-            the overall seriousness of Jiuyu as a supplier. Strong visual hierarchy matters as much as raw specs.
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">{design.useCaseFraming}</p>
+          <h2 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{design.useCaseTitle}</h2>
+          <p className="mt-4 text-lg leading-8 text-stone-400">{design.useCaseBody}</p>
         </article>
         <aside className="border border-white/10 bg-black/40 p-6 backdrop-blur-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Inquiry fit</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">{design.inquiryFit}</p>
           <div className="mt-4 grid gap-3 text-base leading-7 text-stone-300">
-            <p>Best used when the buyer already knows the machine family.</p>
-            <p>Supports first-pass evaluation before email or WhatsApp contact.</p>
-            <p>Leaves room for richer technical sheets in a later release.</p>
+            {design.inquiryPoints.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
           </div>
         </aside>
       </section>

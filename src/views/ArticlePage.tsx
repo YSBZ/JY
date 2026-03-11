@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 
-import { articles, uiCopy } from '../content/site'
+import { articleDesignCopy, articles, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 
@@ -8,6 +8,7 @@ export function ArticlePage() {
   const { slug } = useParams()
   const { locale } = useLocale()
   const ui = uiCopy[locale]
+  const design = articleDesignCopy[locale]
   const article = articles.find((item) => item.slug === slug)
 
   if (!article) {
@@ -41,11 +42,11 @@ export function ArticlePage() {
           </div>
 
           <aside className="border border-white/10 bg-black/40 p-5 backdrop-blur-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Reading intent</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">{design.readingIntent}</p>
             <div className="mt-4 grid gap-3 text-base leading-7 text-stone-300">
-              <p>Built to support product understanding, not content volume.</p>
-              <p>Short, direct articles match the industrial tone of the site.</p>
-              <p>Future long-form knowledge pieces can expand from this structure.</p>
+              {design.readingPoints.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
             </div>
             <Link
               className="mt-6 inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"

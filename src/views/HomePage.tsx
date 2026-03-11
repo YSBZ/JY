@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articles, homeCopy, productFamilyCopy, products, uiCopy } from '../content/site'
+import { articles, homeCopy, homeDesignCopy, productFamilyCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -9,6 +9,7 @@ export function HomePage() {
   const { locale } = useLocale()
   const copy = homeCopy[locale]
   const ui = uiCopy[locale]
+  const design = homeDesignCopy[locale]
 
   return (
     <div className="relative py-14">
@@ -38,13 +39,9 @@ export function HomePage() {
           </div>
 
           <div className="mt-8 grid gap-3 md:grid-cols-3">
-            {[
-              ['01', 'Heavy-duty visual language'],
-              ['02', 'Global-ready reading structure'],
-              ['03', 'Direct inquiry path'],
-            ].map(([index, label]) => (
+            {design.signals.map((label, index) => (
               <div key={index} className="border border-white/10 bg-black/25 px-4 py-4 backdrop-blur-xl">
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{index}</div>
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{`0${index + 1}`}</div>
                 <p className="mt-2 text-base leading-6 text-stone-300">{label}</p>
               </div>
             ))}
@@ -129,11 +126,11 @@ export function HomePage() {
             <p className="max-w-3xl text-lg leading-8 text-stone-400">{copy.storyBody}</p>
           </div>
           <div className="border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_38%),rgba(16,19,22,0.9)] p-6 backdrop-blur-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Identity frame</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{design.identityFrame}</p>
             <div className="mt-4 grid gap-3 text-base leading-7 text-stone-300">
-              <p>Dark material base</p>
-              <p>Strict mechanical geometry</p>
-              <p>Focused CAT-inspired yellow accents</p>
+              {design.identityItems.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
             </div>
             <Link className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/story">
               {ui.storyLink}

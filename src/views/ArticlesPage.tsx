@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articles, uiCopy } from '../content/site'
+import { articleDesignCopy, articles, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -8,6 +8,7 @@ import { SectionTitle } from '../ui/SectionTitle'
 export function ArticlesPage() {
   const { locale } = useLocale()
   const ui = uiCopy[locale]
+  const design = articleDesignCopy[locale]
 
   return (
     <div className="py-14">
@@ -31,7 +32,7 @@ export function ArticlesPage() {
                 <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
                 <p className="mt-3 max-w-3xl text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
-                  <span className="text-sm text-stone-500">{article.body[locale].length} blocks</span>
+                  <span className="text-sm text-stone-500">{article.body[locale].length} {design.blocksSuffix}</span>
                   <Link
                     className="inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
                     to={`/articles/${article.slug}`}
@@ -44,20 +45,13 @@ export function ArticlesPage() {
           </div>
 
           <aside className="border border-white/10 bg-black/45 p-6 backdrop-blur-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">Editorial role</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">{design.editorialRole}</p>
             <h3 className="mt-3 font-['Oxanium'] text-3xl leading-[0.95] text-stone-100">
-              The article tab builds trust before the first quote request.
+              {design.editorialTitle}
             </h3>
-            <p className="mt-4 text-lg leading-7 text-stone-400">
-              This section is not a blog for activity signals. It is a knowledge surface for product framing,
-              application context, and international buyer confidence.
-            </p>
+            <p className="mt-4 text-lg leading-7 text-stone-400">{design.editorialBody}</p>
             <div className="mt-6 grid gap-3">
-              {[
-                'Explain where a machine fits',
-                'Reduce ambiguity for first-time buyers',
-                'Give X traffic something worth reading',
-              ].map((item) => (
+              {design.editorialPoints.map((item) => (
                 <div key={item} className="border border-white/10 bg-zinc-950/80 px-4 py-3 text-base text-stone-300">
                   {item}
                 </div>
