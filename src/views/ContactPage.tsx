@@ -16,35 +16,41 @@ export function ContactPage() {
 
   return (
     <div className="py-14">
-      <PageSection>
-        <SectionTitle eyebrow={ui.inquiryEyebrow} title={copy.title} body={copy.intro} />
-
-        <div className="grid gap-5 lg:grid-cols-[minmax(260px,0.9fr)_minmax(0,1.1fr)]">
-          <div className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
-            {copy.channels.map(([label, value]) => (
-              <div key={label} className="mb-5 last:mb-0">
-                <span className="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
-                  {label}
-                </span>
-                {label.toLowerCase().includes('mail') || label.includes('邮箱') || label.includes('البريد') ? (
-                  <a className="text-lg text-stone-100 transition hover:text-amber-300" href={`mailto:${value}`}>
-                    {value}
-                  </a>
-                ) : label.toLowerCase().includes('whatsapp') || label.includes('واتساب') ? (
-                  <a
-                    className="text-lg text-stone-100 transition hover:text-amber-300"
-                    href={`https://wa.me/${value.replace(/[^\d]/g, '')}`}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {value}
-                  </a>
-                ) : (
-                  <strong className="text-lg text-stone-100">{value}</strong>
-                )}
-              </div>
-            ))}
-          </div>
+      <PageSection className="overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_45%),linear-gradient(180deg,rgba(241,190,50,0.08),transparent_42%)]">
+        <div className="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+          <aside className="border border-white/10 bg-black/45 p-6 backdrop-blur-xl">
+            <SectionTitle eyebrow={ui.inquiryEyebrow} title={copy.title} body={copy.intro} />
+            <div className="grid gap-4">
+              {copy.channels.map(([label, value], index) => (
+                <div key={label} className="border border-white/10 bg-zinc-950/80 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
+                      {label}
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{`0${index + 1}`}</span>
+                  </div>
+                  <div className="mt-3">
+                    {label.toLowerCase().includes('mail') || label.includes('邮箱') || label.includes('البريد') ? (
+                      <a className="text-lg text-stone-100 transition hover:text-amber-300" href={`mailto:${value}`}>
+                        {value}
+                      </a>
+                    ) : label.toLowerCase().includes('whatsapp') || label.includes('واتساب') ? (
+                      <a
+                        className="text-lg text-stone-100 transition hover:text-amber-300"
+                        href={`https://wa.me/${value.replace(/[^\d]/g, '')}`}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <strong className="text-lg text-stone-100">{value}</strong>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </aside>
 
           <form className="grid gap-4 border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
             <label>
