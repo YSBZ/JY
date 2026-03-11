@@ -13,6 +13,16 @@ import { ProductPage } from './views/ProductPage'
 import { ProductsPage } from './views/ProductsPage'
 import { StoryPage } from './views/StoryPage'
 
+function ScrollToTop() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+
+  return null
+}
+
 function RouteMetadata() {
   const location = useLocation()
   const { locale } = useLocale()
@@ -53,6 +63,7 @@ function RouteMetadata() {
 export function App() {
   return (
     <Shell>
+      <ScrollToTop />
       <RouteMetadata />
       <Routes>
         <Route path="/" element={<HomePage />} />
