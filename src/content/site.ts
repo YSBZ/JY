@@ -86,6 +86,7 @@ export const uiCopy = {
     launchCount: 'Flagship machines currently shown on the site',
     storyLink: 'Read the brand story',
     articleOpen: 'Open article',
+    productOpen: 'Open machine',
     articleMissing: 'Article not found.',
     productMissing: 'Product not found.',
     articleMissingBody:
@@ -136,6 +137,7 @@ export const uiCopy = {
     launchCount: '当前站点展示的重点设备数量',
     storyLink: '查看品牌介绍',
     articleOpen: '查看详情',
+    productOpen: '查看设备',
     articleMissing: '未找到文章。',
     productMissing: '未找到产品。',
     articleMissingBody: '当前文章流中没有这篇内容。请返回文章列表，继续查看最新的知识与应用内容。',
@@ -182,6 +184,7 @@ export const uiCopy = {
     launchCount: 'عدد الآلات الرئيسية المعروضة حاليًا على الموقع',
     storyLink: 'اقرأ قصة العلامة',
     articleOpen: 'فتح المقال',
+    productOpen: 'فتح الآلة',
     articleMissing: 'المقال غير موجود.',
     productMissing: 'المنتج غير موجود.',
     articleMissingBody: 'هذا المقال غير موجود ضمن مسار المقالات الحالي. ارجع إلى قسم المقالات لمتابعة أحدث مواد المعرفة والتطبيق.',
@@ -228,6 +231,7 @@ export const uiCopy = {
     launchCount: 'Количество флагманских машин, показанных на сайте сейчас',
     storyLink: 'О бренде',
     articleOpen: 'Открыть статью',
+    productOpen: 'Открыть машину',
     articleMissing: 'Статья не найдена.',
     productMissing: 'Товар не найден.',
     articleMissingBody:
@@ -280,6 +284,7 @@ export const uiCopy = {
     launchCount: string
     storyLink: string
     articleOpen: string
+    productOpen: string
     articleMissing: string
     productMissing: string
     articleMissingBody: string

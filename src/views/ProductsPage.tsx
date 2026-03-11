@@ -65,7 +65,7 @@ export function ProductsPage() {
             {filteredProducts.map((product, index) => (
               <Link
                 key={product.slug}
-                className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
+                className="flex h-full flex-col border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
                 to={`/products/${product.slug}`}
               >
                 <div className="mb-4 flex items-center justify-between gap-3">
@@ -89,6 +89,11 @@ export function ProductsPage() {
                     <li key={spec}>{spec}</li>
                   ))}
                 </ul>
+                <div className="mt-auto pt-6">
+                  <span className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+                    {ui.productOpen}
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

@@ -90,7 +90,7 @@ export function HomePage() {
             <Link
               key={product.slug}
               className={[
-                'group relative overflow-hidden border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35',
+                'group relative flex h-full flex-col overflow-hidden border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35',
                 product.accent === 'amber'
                   ? 'bg-[linear-gradient(180deg,rgba(241,190,50,0.14),transparent_50%),rgba(16,19,22,0.9)]'
                   : product.accent === 'steel'
@@ -116,6 +116,11 @@ export function HomePage() {
                   <li key={spec}>{spec}</li>
                 ))}
               </ul>
+              <div className="mt-auto pt-6">
+                <span className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+                  {ui.productOpen}
+                </span>
+              </div>
             </Link>
           ))}
         </div>
