@@ -33,6 +33,8 @@ function RouteMetadata() {
 
   useEffect(() => {
     const path = location.pathname
+    const siteUrl = new URL(path === '/' ? '/' : path, window.location.origin).toString()
+    const shareImage = new URL('/favicon.svg', window.location.origin).toString()
     let title = 'Jiuyu Machinery'
     let description = home.intro
 
@@ -68,16 +70,26 @@ function RouteMetadata() {
 
     document.title = title
     const descriptionMeta = document.querySelector('meta[name="description"]')
+    const canonicalLink = document.querySelector('link[rel="canonical"]')
     const ogTitleMeta = document.querySelector('meta[property="og:title"]')
     const ogDescriptionMeta = document.querySelector('meta[property="og:description"]')
+    const ogUrlMeta = document.querySelector('meta[property="og:url"]')
+    const ogImageMeta = document.querySelector('meta[property="og:image"]')
     const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
     const twitterDescriptionMeta = document.querySelector('meta[name="twitter:description"]')
+    const twitterUrlMeta = document.querySelector('meta[name="twitter:url"]')
+    const twitterImageMeta = document.querySelector('meta[name="twitter:image"]')
 
     descriptionMeta?.setAttribute('content', description)
+    canonicalLink?.setAttribute('href', siteUrl)
     ogTitleMeta?.setAttribute('content', title)
     ogDescriptionMeta?.setAttribute('content', description)
+    ogUrlMeta?.setAttribute('content', siteUrl)
+    ogImageMeta?.setAttribute('content', shareImage)
     twitterTitleMeta?.setAttribute('content', title)
     twitterDescriptionMeta?.setAttribute('content', description)
+    twitterUrlMeta?.setAttribute('content', siteUrl)
+    twitterImageMeta?.setAttribute('content', shareImage)
   }, [company.intro, contact.intro, home.intro, locale, location.pathname, ui])
 
   return null
