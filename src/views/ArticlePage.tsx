@@ -15,7 +15,20 @@ export function ArticlePage() {
   if (!article) {
     return (
       <div className="py-14">
-        <p className="text-lg text-stone-300">{ui.articleMissing}</p>
+        <PageSection className="max-w-[760px] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_42%),rgba(16,19,22,0.92)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{ui.articlesEyebrow}</p>
+          <h1 className="mt-3 font-['Oxanium'] text-[clamp(2.6rem,6vw,4rem)] leading-[0.94] text-stone-100">{ui.articleMissing}</h1>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-400">
+            The requested article is not included in the current published set. Return to the article stream to keep
+            reading the latest knowledge and application notes.
+          </p>
+          <Link
+            className="mt-6 inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+            to="/articles"
+          >
+            {ui.backToArticles}
+          </Link>
+        </PageSection>
       </div>
     )
   }
