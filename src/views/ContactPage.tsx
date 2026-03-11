@@ -101,6 +101,7 @@ export function ContactPage() {
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
                 onChange={(event) => updateField('name', event.target.value)}
                 placeholder={ui.formNamePlaceholder}
+                required
                 value={form.name}
               />
             </label>
@@ -110,6 +111,7 @@ export function ContactPage() {
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
                 onChange={(event) => updateField('email', event.target.value)}
                 placeholder={ui.formEmailPlaceholder}
+                required
                 type="email"
                 value={form.email}
               />
@@ -159,6 +161,7 @@ export function ContactPage() {
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
                 onChange={(event) => updateField('details', event.target.value)}
                 placeholder={ui.formDetailsPlaceholder}
+                required
                 rows={6}
                 value={form.details}
               />
