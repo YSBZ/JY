@@ -131,6 +131,19 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - Once the page compositions are in place, the next biggest quality gap is usually hidden in leftover hardcoded copy
 - Shell-level polish matters because it is visible on every page and sets the perceived completeness of the whole site
 
+### 2026-03-11 - Placeholder feel reduction
+
+**By:** Codex
+
+**Actions:**
+- Replaced the fixed homepage output count with the real current product count
+- Removed overt MVP/demo phrasing from the visible site shell
+- Softened inquiry copy so the interface reads more like a release candidate than a prototype
+
+**Learnings:**
+- Small textual signals can make an otherwise solid layout still feel unfinished
+- Reducing prototype language is one of the fastest ways to improve perceived quality late in the design pass
+
 ### 2026-03-10 - Core page design refinement
 
 **By:** Codex
