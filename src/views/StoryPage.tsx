@@ -13,8 +13,8 @@ export function StoryPage() {
 
   return (
     <div className="py-14">
-      <PageSection className="relative overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_48%),linear-gradient(180deg,rgba(241,190,50,0.08),transparent_42%)]">
-        <div className="absolute inset-y-0 right-0 hidden w-[38%] border-l border-white/6 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_25%)] lg:block" />
+      <PageSection className="story-hero relative overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_48%),linear-gradient(180deg,rgba(241,190,50,0.08),transparent_42%)]">
+        <div className="story-hero-panel absolute inset-y-0 right-0 hidden w-[38%] border-l border-white/6 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_25%)] lg:block" />
         <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_320px]">
           <div>
             <SectionTitle eyebrow={ui.companyEyebrow} title={copy.title} body={copy.intro} />

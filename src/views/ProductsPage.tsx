@@ -28,7 +28,7 @@ export function ProductsPage() {
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{ui.productFamilyLabel}</span>
               <button
                 className={[
-                  'flex items-center justify-between border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.18em] transition',
+                  'family-filter flex items-center justify-between border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.18em] transition',
                   activeFamily === 'all'
                     ? 'border-amber-300/40 bg-amber-300/12 text-stone-100'
                     : 'border-white/10 bg-black/35 text-stone-400 hover:border-white/20 hover:text-stone-100',
@@ -45,7 +45,7 @@ export function ProductsPage() {
                   <button
                     key={family}
                     className={[
-                      'flex items-center justify-between border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.18em] transition',
+                      'family-filter flex items-center justify-between border px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.18em] transition',
                       activeFamily === family
                         ? 'border-amber-300/40 bg-amber-300/12 text-stone-100'
                         : 'border-white/10 bg-black/35 text-stone-400 hover:border-white/20 hover:text-stone-100',

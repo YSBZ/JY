@@ -42,7 +42,7 @@ export function ArticlePage() {
             <div className="mt-8 max-w-3xl space-y-5">
               {article.body[locale].map((paragraph, index) => (
                 <p key={paragraph} className="text-lg leading-8 text-stone-400">
-                  <span className="mr-3 inline-block min-w-8 font-['Oxanium'] text-amber-300/80">{`0${index + 1}`}</span>
+                  <span className="article-step mr-3 inline-block min-w-8 font-['Oxanium'] text-amber-300/80">{`0${index + 1}`}</span>
                   {paragraph}
                 </p>
               ))}

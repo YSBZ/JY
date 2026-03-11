@@ -13,7 +13,7 @@ export function HomePage() {
 
   return (
     <div className="relative py-14">
-      <PageSection className="grid gap-8 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_50%),linear-gradient(180deg,rgba(241,190,50,0.06),transparent_40%)] lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:p-14">
+      <PageSection className="site-hero grid gap-8 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_50%),linear-gradient(180deg,rgba(241,190,50,0.06),transparent_40%)] lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:p-14">
         <div className="relative">
           <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
             {copy.eyebrow}
@@ -55,14 +55,14 @@ export function HomePage() {
             src={products[0].image}
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,17,19,0.18),rgba(15,17,19,0.72))]" />
-          <div className="absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
+          <div className="site-hero-metric absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">{ui.trackedOutput}</span>
             <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">
               {String(products.length).padStart(2, '0')}
             </strong>
             <p className="mt-3 text-base leading-6 text-stone-400">{ui.launchCount}</p>
           </div>
-          <div className="absolute top-5 left-5 z-10 border border-white/10 bg-black/70 px-4 py-3 backdrop-blur-xl">
+          <div className="site-hero-label absolute top-5 left-5 z-10 border border-white/10 bg-black/70 px-4 py-3 backdrop-blur-xl">
             <div className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
               {productFamilyCopy[products[0].family][locale]}
             </div>

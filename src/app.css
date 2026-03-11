@@ -45,7 +45,39 @@
 
   button,
   input,
+  select,
   textarea {
     font: inherit;
+  }
+
+  [dir='rtl'] .site-hero-label {
+    left: auto;
+    right: 1.25rem;
+  }
+
+  [dir='rtl'] .site-hero-metric {
+    right: auto;
+    left: 1.25rem;
+  }
+
+  [dir='rtl'] .story-hero-panel {
+    right: auto;
+    left: 0;
+    border-left-width: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  [dir='rtl'] .article-step {
+    margin-right: 0;
+    margin-left: 0.75rem;
+  }
+
+  [dir='rtl'] .family-filter {
+    text-align: right;
+  }
+
+  [dir='rtl'] ul {
+    padding-left: 0;
+    padding-right: 1.25rem;
   }
 }
