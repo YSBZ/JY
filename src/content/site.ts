@@ -76,6 +76,10 @@ export const uiCopy = {
     articleOpen: 'Open article',
     articleMissing: 'Article not found.',
     productMissing: 'Product not found.',
+    articleMissingBody:
+      'The requested article is not included in the current published set. Return to the article stream to keep reading the latest knowledge and application notes.',
+    productMissingBody:
+      'The requested machine entry is not available in the current release. Return to the catalog to continue browsing the current featured equipment range.',
     inquireProduct: 'Ask about this machine',
     productCatalogEyebrow: 'Product catalog',
     productCatalogTitle: 'Product catalog',
@@ -119,6 +123,8 @@ export const uiCopy = {
     articleOpen: '查看详情',
     articleMissing: '未找到文章。',
     productMissing: '未找到产品。',
+    articleMissingBody: '当前发布内容中不包含这篇文章。请返回文章列表，继续查看最新的知识与应用内容。',
+    productMissingBody: '当前发布内容中没有这条设备信息。请返回产品目录，继续浏览现有重点设备。',
     inquireProduct: '咨询这款设备',
     productCatalogEyebrow: '产品目录',
     productCatalogTitle: '产品目录',
@@ -160,6 +166,8 @@ export const uiCopy = {
     articleOpen: 'فتح المقال',
     articleMissing: 'المقال غير موجود.',
     productMissing: 'المنتج غير موجود.',
+    articleMissingBody: 'هذا المقال غير موجود ضمن المحتوى المنشور حاليًا. ارجع إلى قسم المقالات لمتابعة أحدث مواد المعرفة والتطبيق.',
+    productMissingBody: 'هذا الإدخال الخاص بالآلة غير متاح في الإصدار الحالي. ارجع إلى الكتالوج لمتابعة تصفح المعدات الرئيسية المعروضة.',
     inquireProduct: 'استفسر عن هذه الآلة',
     productCatalogEyebrow: 'المنتجات',
     productCatalogTitle: 'كتالوج المنتجات',
@@ -201,6 +209,10 @@ export const uiCopy = {
     articleOpen: 'Открыть статью',
     articleMissing: 'Статья не найдена.',
     productMissing: 'Товар не найден.',
+    articleMissingBody:
+      'Запрошенная статья не входит в текущий опубликованный набор. Вернитесь в раздел статей, чтобы продолжить чтение материалов о знаниях и применении.',
+    productMissingBody:
+      'Запрошенная машина недоступна в текущем релизе. Вернитесь в каталог, чтобы продолжить просмотр текущего набора ключевого оборудования.',
     inquireProduct: 'Запросить информацию об этой машине',
     productCatalogEyebrow: 'Продукция',
     productCatalogTitle: 'Каталог продукции',
@@ -246,6 +258,8 @@ export const uiCopy = {
     articleOpen: string
     articleMissing: string
     productMissing: string
+    articleMissingBody: string
+    productMissingBody: string
     inquireProduct: string
     productCatalogEyebrow: string
     productCatalogTitle: string
