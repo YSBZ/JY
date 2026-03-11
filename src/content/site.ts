@@ -111,6 +111,9 @@ export const uiCopy = {
     backToArticles: 'Back to articles',
     relatedProducts: 'Related machines',
     continueReading: 'Continue reading',
+    notFoundTitle: 'Page not found',
+    notFoundBody: 'The requested page is not part of the current Jiuyu Machinery release. Return to the homepage or continue into the product catalog.',
+    returnHome: 'Return home',
     inquiryTypeGeneral: 'General inquiry',
     inquiryTypeQuote: 'Request quote',
     inquiryTypeDistributor: 'Distributor / partner',
@@ -154,6 +157,9 @@ export const uiCopy = {
     backToArticles: '返回文章列表',
     relatedProducts: '相关设备',
     continueReading: '继续阅读',
+    notFoundTitle: '未找到页面',
+    notFoundBody: '当前 Jiuyu Machinery 站点中没有这个页面。请返回首页，或继续浏览产品目录。',
+    returnHome: '返回首页',
     inquiryTypeGeneral: '常规咨询',
     inquiryTypeQuote: '获取报价',
     inquiryTypeDistributor: '渠道/合作',
@@ -197,6 +203,9 @@ export const uiCopy = {
     backToArticles: 'العودة إلى المقالات',
     relatedProducts: 'آلات ذات صلة',
     continueReading: 'متابعة القراءة',
+    notFoundTitle: 'الصفحة غير موجودة',
+    notFoundBody: 'هذه الصفحة غير موجودة ضمن إصدار Jiuyu Machinery الحالي. ارجع إلى الصفحة الرئيسية أو واصل تصفح كتالوج المنتجات.',
+    returnHome: 'العودة إلى الرئيسية',
     inquiryTypeGeneral: 'استفسار عام',
     inquiryTypeQuote: 'طلب عرض سعر',
     inquiryTypeDistributor: 'موزع / شريك',
@@ -244,6 +253,9 @@ export const uiCopy = {
     backToArticles: 'Назад к статьям',
     relatedProducts: 'Похожие машины',
     continueReading: 'Читать дальше',
+    notFoundTitle: 'Страница не найдена',
+    notFoundBody: 'Эта страница не входит в текущий релиз Jiuyu Machinery. Вернитесь на главную или продолжите просмотр каталога.',
+    returnHome: 'На главную',
     inquiryTypeGeneral: 'Общий запрос',
     inquiryTypeQuote: 'Запрос цены',
     inquiryTypeDistributor: 'Дистрибьютор / партнер',
@@ -289,6 +301,9 @@ export const uiCopy = {
     backToArticles: string
     relatedProducts: string
     continueReading: string
+    notFoundTitle: string
+    notFoundBody: string
+    returnHome: string
     inquiryTypeGeneral: string
     inquiryTypeQuote: string
     inquiryTypeDistributor: string

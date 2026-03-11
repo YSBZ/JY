@@ -144,6 +144,18 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - Small textual signals can make an otherwise solid layout still feel unfinished
 - Reducing prototype language is one of the fastest ways to improve perceived quality late in the design pass
 
+### 2026-03-11 - Global fallback and edge-state polish
+
+**By:** Codex
+
+**Actions:**
+- Added a dedicated 404 page instead of leaving unknown routes to fail unstyled
+- Continued polishing edge states so the public review build behaves more like a complete site shell
+
+**Learnings:**
+- A site can look finished on the happy path and still feel incomplete if unknown routes are not handled deliberately
+- Public review builds need polished fallback states because reviewers often test rough paths manually
+
 ### 2026-03-10 - Core page design refinement
 
 **By:** Codex
