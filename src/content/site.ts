@@ -13,21 +13,45 @@ export const shellCopy = {
     subtitle: 'Global machinery site',
     footerKicker: 'Industrial site MVP',
     footerReach: 'Built for global reach',
+    footerSignals: ['EN / ZH / AR / RU', 'Catalog-first structure', 'Inquiry-ready shell'],
+    footerChannel: 'Channel',
+    footerChannelValue: 'GitHub Pages',
+    footerDomainStatus: 'Domain status',
+    footerDomainStatusValue: 'Pending custom domain',
+    footerPrimaryCta: 'Primary CTA',
   },
   zh: {
     subtitle: '国际机械品牌站',
     footerKicker: '工业展示站首版',
     footerReach: '海外访问优先',
+    footerSignals: ['英文 / 中文 / 阿语 / 俄语', '目录优先结构', '可承接询盘的外壳'],
+    footerChannel: '渠道',
+    footerChannelValue: 'GitHub Pages',
+    footerDomainStatus: '域名状态',
+    footerDomainStatusValue: '等待自定义域名接入',
+    footerPrimaryCta: '主要入口',
   },
   ar: {
     subtitle: 'موقع عالمي للآلات',
     footerKicker: 'النسخة الأولى للموقع الصناعي',
     footerReach: 'مصمم للوصول العالمي',
+    footerSignals: ['EN / ZH / AR / RU', 'هيكل يركز على الكتالوج', 'واجهة جاهزة للاستفسار'],
+    footerChannel: 'القناة',
+    footerChannelValue: 'GitHub Pages',
+    footerDomainStatus: 'حالة النطاق',
+    footerDomainStatusValue: 'بانتظار ربط النطاق المخصص',
+    footerPrimaryCta: 'الدعوة الرئيسية',
   },
   ru: {
     subtitle: 'Глобальный сайт машиностроения',
     footerKicker: 'MVP промышленного сайта',
     footerReach: 'Сайт для глобальной аудитории',
+    footerSignals: ['EN / ZH / AR / RU', 'Каталог как основа', 'Оболочка для запросов'],
+    footerChannel: 'Канал',
+    footerChannelValue: 'GitHub Pages',
+    footerDomainStatus: 'Статус домена',
+    footerDomainStatusValue: 'Ожидает подключения собственного домена',
+    footerPrimaryCta: 'Главный CTA',
   },
 } satisfies Record<
   Locale,
@@ -35,6 +59,12 @@ export const shellCopy = {
     subtitle: string
     footerKicker: string
     footerReach: string
+    footerSignals: string[]
+    footerChannel: string
+    footerChannelValue: string
+    footerDomainStatus: string
+    footerDomainStatusValue: string
+    footerPrimaryCta: string
   }
 >
 

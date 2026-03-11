@@ -118,6 +118,19 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 - The current prototype benefits more from believable conversion structure than from adding more raw placeholder copy
 - Even before backend wiring exists, a more realistic inquiry flow makes review and stakeholder feedback much easier
 
+### 2026-03-11 - Localization and site-shell refinement
+
+**By:** Codex
+
+**Actions:**
+- Removed remaining hardcoded English page-design copy from the main user-facing pages
+- Added localized design copy sources for homepage, story, articles, and product detail pages
+- Upgraded the site shell footer so the overall frame feels closer to a reviewable product rather than a prototype
+
+**Learnings:**
+- Once the page compositions are in place, the next biggest quality gap is usually hidden in leftover hardcoded copy
+- Shell-level polish matters because it is visible on every page and sets the perceived completeness of the whole site
+
 ### 2026-03-10 - Core page design refinement
 
 **By:** Codex

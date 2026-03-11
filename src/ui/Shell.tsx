@@ -102,14 +102,41 @@ export function Shell({ children }: { children: ReactNode }) {
 
       <main className="relative">{children}</main>
 
-      <footer className="relative mt-6 mb-10 flex flex-col justify-between gap-6 border border-white/10 bg-black/75 px-6 py-6 backdrop-blur-xl lg:flex-row lg:items-end">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">{copy.footerKicker}</p>
-          <h2 className="mt-2 font-['Oxanium'] text-3xl text-stone-100">Jiuyu Machinery</h2>
+      <footer className="relative mt-6 mb-10 grid gap-6 border border-white/10 bg-black/75 px-6 py-6 backdrop-blur-xl lg:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="grid gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">{copy.footerKicker}</p>
+            <h2 className="mt-2 font-['Oxanium'] text-3xl text-stone-100">Jiuyu Machinery</h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {copy.footerSignals.map((item, index) => (
+              <div key={item} className="border border-white/10 bg-zinc-950/70 px-4 py-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{`0${index + 1}`}</div>
+                <p className="mt-2 text-sm leading-6 text-stone-300">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-1 text-sm text-stone-400 lg:justify-items-end">
-          <span>jiuyumachinery.com</span>
-          <span>{copy.footerReach}</span>
+
+        <div className="grid gap-4 lg:justify-items-end">
+          <div className="grid gap-1 text-sm text-stone-400 lg:justify-items-end">
+            <span>jiuyumachinery.com</span>
+            <span>{copy.footerReach}</span>
+          </div>
+          <div className="grid gap-3 border border-white/10 bg-zinc-950/70 px-5 py-4 text-sm text-stone-400 lg:min-w-[320px]">
+            <div className="flex items-center justify-between gap-4">
+              <span>{copy.footerChannel}</span>
+              <span className="text-stone-100">{copy.footerChannelValue}</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <span>{copy.footerDomainStatus}</span>
+              <span className="text-stone-100">{copy.footerDomainStatusValue}</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <span>{copy.footerPrimaryCta}</span>
+              <span className="text-stone-100">{items[items.length - 1]?.label ?? 'Contact'}</span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
