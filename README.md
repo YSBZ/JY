@@ -38,6 +38,13 @@ npm run build
 - This branch uses standard `BrowserRouter` routing for real domains.
 - Vite builds from `/` instead of a GitHub Pages subpath.
 - `vercel.json` keeps SPA rewrites so direct route visits continue to work.
+- Public assets now include `robots.txt`, `sitemap.xml`, and `site.webmanifest` for the production domain.
+
+## Vercel Handoff
+
+- Import the `platform-release-prep` branch into Vercel for the first real-domain deployment pass.
+- Keep `main` as the GitHub Pages review branch until the production hostname is verified.
+- After `jiuyumachinery.com` is attached, revisit `public/sitemap.xml` if route scope expands.
 
 ## Current Scope
 

@@ -1,0 +1,16 @@
+{
+  "name": "Jiuyu Machinery",
+  "short_name": "Jiuyu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0f11",
+  "theme_color": "#0d0f11",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

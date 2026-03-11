@@ -172,3 +172,17 @@ Use Option 1. Complete deployment and domain binding first, then improve media q
 ## Notes
 
 - This todo exists because the user explicitly asked to defer the remaining work and focus on code plus local product images first.
+
+### 2026-03-11 - Standard-domain deployment branch prepared
+
+**By:** Codex
+
+**Actions:**
+- Created `platform-release-prep` from the finalized GitHub review build
+- Removed the GitHub Pages workflow from this branch so release configuration is no longer split between two platforms
+- Switched the branch back to standard-domain routing and root-path Vite output
+- Added `robots.txt`, `sitemap.xml`, and `site.webmanifest` for `jiuyumachinery.com`
+
+**Learnings:**
+- Keeping the review build on `main` and the real deployment work on a separate branch reduces release risk
+- Production-facing static assets are worth preparing before DNS cutover so deployment validation is not blocked by missing basics
