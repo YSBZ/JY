@@ -10,6 +10,7 @@ export function ArticlePage() {
   const ui = uiCopy[locale]
   const design = articleDesignCopy[locale]
   const article = articles.find((item) => item.slug === slug)
+  const relatedArticles = articles.filter((item) => item.slug !== slug).slice(0, 2)
 
   if (!article) {
     return (
@@ -21,6 +22,13 @@ export function ArticlePage() {
 
   return (
     <div className="py-14">
+      <Link
+        className="mb-5 inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-stone-400 transition hover:text-amber-300"
+        to="/articles"
+      >
+        {ui.backToArticles}
+      </Link>
+
       <PageSection className="max-w-[980px] overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.03),transparent_48%),linear-gradient(180deg,rgba(241,190,50,0.07),transparent_38%)]">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
           <div>
@@ -57,6 +65,28 @@ export function ArticlePage() {
           </aside>
         </div>
       </PageSection>
+
+      <section className="mt-8 max-w-[980px]">
+        <div className="mb-5 flex items-end justify-between gap-4">
+          <h2 className="font-['Oxanium'] text-3xl text-stone-100">{ui.continueReading}</h2>
+          <Link className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/articles">
+            {ui.backToArticles}
+          </Link>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-2">
+          {relatedArticles.map((item) => (
+            <Link
+              key={item.slug}
+              className="border border-white/10 bg-zinc-950/85 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
+              to={`/articles/${item.slug}`}
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{item.tag[locale]}</span>
+              <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{item.title[locale]}</h3>
+              <p className="mt-3 text-lg leading-7 text-stone-400">{item.excerpt[locale]}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

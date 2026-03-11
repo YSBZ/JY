@@ -10,6 +10,7 @@ export function ProductPage() {
   const ui = uiCopy[locale]
   const design = productDesignCopy[locale]
   const product = products.find((item) => item.slug === slug)
+  const relatedProducts = products.filter((item) => item.slug !== slug).slice(0, 2)
 
   if (!product) {
     return (
@@ -21,6 +22,13 @@ export function ProductPage() {
 
   return (
     <div className="max-w-[1100px] py-14">
+      <Link
+        className="mb-5 inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-stone-400 transition hover:text-amber-300"
+        to="/products"
+      >
+        {ui.backToProducts}
+      </Link>
+
       <PageSection
         className={[
           'grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_300px]',
@@ -100,6 +108,33 @@ export function ProductPage() {
       >
         {ui.inquireProduct}
       </Link>
+
+      <section className="mt-8">
+        <div className="mb-5 flex items-end justify-between gap-4">
+          <h2 className="font-['Oxanium'] text-3xl text-stone-100">{ui.relatedProducts}</h2>
+          <Link className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-300" to="/products">
+            {ui.backToProducts}
+          </Link>
+        </div>
+        <div className="grid gap-5 lg:grid-cols-2">
+          {relatedProducts.map((item) => (
+            <Link
+              key={item.slug}
+              className="border border-white/10 bg-zinc-950/85 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
+              to={`/products/${item.slug}`}
+            >
+              <img alt={item.imageAlt[locale]} className="mb-4 h-48 w-full border border-white/10 object-cover" src={item.image} />
+              <div className="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                <span className="text-amber-300">{productFamilyCopy[item.family][locale]}</span>
+                <span className="text-stone-500">/</span>
+                <span className="text-stone-400">{item.category[locale]}</span>
+              </div>
+              <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{item.title[locale]}</h3>
+              <p className="mt-3 text-lg leading-7 text-stone-400">{item.summary[locale]}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

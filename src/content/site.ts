@@ -103,6 +103,10 @@ export const uiCopy = {
     productConfig: 'Configuration cues',
     productFamilyLabel: 'Product families',
     productAllFamilies: 'All',
+    backToProducts: 'Back to products',
+    backToArticles: 'Back to articles',
+    relatedProducts: 'Related machines',
+    continueReading: 'Continue reading',
     inquiryTypeGeneral: 'General inquiry',
     inquiryTypeQuote: 'Request quote',
     inquiryTypeDistributor: 'Distributor / partner',
@@ -140,6 +144,10 @@ export const uiCopy = {
     productConfig: '配置方向',
     productFamilyLabel: '产品系列',
     productAllFamilies: '全部',
+    backToProducts: '返回产品目录',
+    backToArticles: '返回文章列表',
+    relatedProducts: '相关设备',
+    continueReading: '继续阅读',
     inquiryTypeGeneral: '常规咨询',
     inquiryTypeQuote: '获取报价',
     inquiryTypeDistributor: '渠道/合作',
@@ -177,6 +185,10 @@ export const uiCopy = {
     productConfig: 'ملامح التكوين',
     productFamilyLabel: 'عائلات المنتجات',
     productAllFamilies: 'الكل',
+    backToProducts: 'العودة إلى المنتجات',
+    backToArticles: 'العودة إلى المقالات',
+    relatedProducts: 'آلات ذات صلة',
+    continueReading: 'متابعة القراءة',
     inquiryTypeGeneral: 'استفسار عام',
     inquiryTypeQuote: 'طلب عرض سعر',
     inquiryTypeDistributor: 'موزع / شريك',
@@ -216,6 +228,10 @@ export const uiCopy = {
     productConfig: 'Конфигурация',
     productFamilyLabel: 'Семейства продукции',
     productAllFamilies: 'Все',
+    backToProducts: 'Назад к продуктам',
+    backToArticles: 'Назад к статьям',
+    relatedProducts: 'Похожие машины',
+    continueReading: 'Читать дальше',
     inquiryTypeGeneral: 'Общий запрос',
     inquiryTypeQuote: 'Запрос цены',
     inquiryTypeDistributor: 'Дистрибьютор / партнер',
@@ -255,6 +271,10 @@ export const uiCopy = {
     productConfig: string
     productFamilyLabel: string
     productAllFamilies: string
+    backToProducts: string
+    backToArticles: string
+    relatedProducts: string
+    continueReading: string
     inquiryTypeGeneral: string
     inquiryTypeQuote: string
     inquiryTypeDistributor: string
