@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { contactCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
@@ -13,6 +15,42 @@ export function ContactPage() {
     ui.inquiryTypeDistributor,
     ui.inquiryTypeAfterSales,
   ]
+  const emailTarget = copy.channels.find(([label]) =>
+    label.toLowerCase().includes('mail') || label.includes('邮箱') || label.includes('البريد'),
+  )?.[1]
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    company: '',
+    product: products[0]?.slug ?? '',
+    inquiryType: inquiryTypes[0] ?? '',
+    details: '',
+  })
+
+  function updateField(field: keyof typeof form, value: string) {
+    setForm((current) => ({ ...current, [field]: value }))
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    if (!emailTarget) return
+
+    const productLabel = products.find((product) => product.slug === form.product)?.title[locale] ?? form.product
+    const subject = `${form.inquiryType} - ${productLabel} - ${form.company || form.name || 'Jiuyu Inquiry'}`
+    const body = [
+      `${ui.formName}: ${form.name || '-'}`,
+      `${ui.formEmail}: ${form.email || '-'}`,
+      `${ui.formCompany}: ${form.company || '-'}`,
+      `${ui.formProduct}: ${productLabel || '-'}`,
+      `${ui.formInquiryType}: ${form.inquiryType || '-'}`,
+      '',
+      `${ui.formDetails}:`,
+      form.details || '-',
+    ].join('\n')
+
+    window.location.href = `mailto:${emailTarget}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
 
   return (
     <div className="py-14">
@@ -54,35 +92,45 @@ export function ContactPage() {
             </div>
           </aside>
 
-          <form className="grid gap-4 border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl">
+          <form className="grid gap-4 border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl" onSubmit={handleSubmit}>
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">
                 {ui.formName}
               </span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                onChange={(event) => updateField('name', event.target.value)}
                 placeholder={ui.formNamePlaceholder}
+                value={form.name}
               />
             </label>
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formEmail}</span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                onChange={(event) => updateField('email', event.target.value)}
                 placeholder={ui.formEmailPlaceholder}
                 type="email"
+                value={form.email}
               />
             </label>
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formCompany}</span>
               <input
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                onChange={(event) => updateField('company', event.target.value)}
                 placeholder={ui.formCompanyPlaceholder}
+                value={form.company}
               />
             </label>
             <div className="grid gap-4 md:grid-cols-2">
               <label>
                 <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formProduct}</span>
-                <select className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40">
+                <select
+                  className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40"
+                  onChange={(event) => updateField('product', event.target.value)}
+                  value={form.product}
+                >
                   {products.map((product) => (
                     <option key={product.slug} value={product.slug}>
                       {product.title[locale]}
@@ -92,7 +140,11 @@ export function ContactPage() {
               </label>
               <label>
                 <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formInquiryType}</span>
-                <select className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40">
+                <select
+                  className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40"
+                  onChange={(event) => updateField('inquiryType', event.target.value)}
+                  value={form.inquiryType}
+                >
                   {inquiryTypes.map((item) => (
                     <option key={item} value={item}>
                       {item}
@@ -105,12 +157,14 @@ export function ContactPage() {
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formDetails}</span>
               <textarea
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                onChange={(event) => updateField('details', event.target.value)}
                 placeholder={ui.formDetailsPlaceholder}
                 rows={6}
+                value={form.details}
               />
             </label>
             <button
-              type="button"
+              type="submit"
               className="inline-flex items-center justify-center border border-amber-200/80 bg-linear-to-br from-amber-200 to-amber-400 px-5 py-3 text-xs font-bold uppercase tracking-[0.22em] text-black transition hover:-translate-y-0.5"
             >
               {ui.formSubmit}
