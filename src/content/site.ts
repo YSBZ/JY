@@ -300,7 +300,7 @@ export const homeDesignCopy = {
   en: {
     signals: ['Heavy-duty visual language', 'Global-ready reading structure', 'Direct inquiry path'],
     identityFrame: 'Identity frame',
-    identityItems: ['Dark material base', 'Strict mechanical geometry', 'Focused CAT-inspired yellow accents'],
+    identityItems: ['Dark material base', 'Strict mechanical geometry', 'Focused engineering-yellow accents'],
   },
   zh: {
     signals: ['重工业视觉语言', '面向国际阅读的结构', '直接可用的询盘路径'],
@@ -310,12 +310,12 @@ export const homeDesignCopy = {
   ar: {
     signals: ['لغة بصرية ثقيلة', 'هيكل قراءة جاهز للعالم', 'مسار استفسار مباشر'],
     identityFrame: 'إطار الهوية',
-    identityItems: ['قاعدة داكنة بطابع صناعي', 'هندسة ميكانيكية صارمة', 'لمسات صفراء مستوحاة من CAT'],
+    identityItems: ['قاعدة داكنة بطابع صناعي', 'هندسة ميكانيكية صارمة', 'لمسات صفراء هندسية مركزة'],
   },
   ru: {
     signals: ['Тяжелый визуальный язык', 'Структура чтения для глобальной аудитории', 'Прямой путь к запросу'],
     identityFrame: 'Каркас идентичности',
-    identityItems: ['Темная индустриальная база', 'Строгая механическая геометрия', 'Акцентный желтый в духе CAT'],
+    identityItems: ['Темная индустриальная база', 'Строгая механическая геометрия', 'Сфокусированные инженерные желтые акценты'],
   },
 } satisfies Record<Locale, { signals: string[]; identityFrame: string; identityItems: string[] }>
 
