@@ -124,6 +124,7 @@ export const uiCopy = {
     backToArticles: 'Back to articles',
     relatedProducts: 'Related machines',
     continueReading: 'Continue reading',
+    contactCta: 'Contact Jiuyu',
     notFoundTitle: 'Page not found',
     notFoundBody: 'The requested page is not part of the current Jiuyu Machinery site. Return to the homepage or continue into the product catalog.',
     returnHome: 'Return home',
@@ -171,6 +172,7 @@ export const uiCopy = {
     backToArticles: '返回文章列表',
     relatedProducts: '相关设备',
     continueReading: '继续阅读',
+    contactCta: '联系 Jiuyu',
     notFoundTitle: '未找到页面',
     notFoundBody: 'Jiuyu Machinery 当前站点中没有这个页面。请返回首页，或继续浏览产品目录。',
     returnHome: '返回首页',
@@ -218,6 +220,7 @@ export const uiCopy = {
     backToArticles: 'العودة إلى المقالات',
     relatedProducts: 'آلات ذات صلة',
     continueReading: 'متابعة القراءة',
+    contactCta: 'التواصل مع Jiuyu',
     notFoundTitle: 'الصفحة غير موجودة',
     notFoundBody: 'هذه الصفحة غير موجودة ضمن موقع Jiuyu Machinery الحالي. ارجع إلى الصفحة الرئيسية أو واصل تصفح كتالوج المنتجات.',
     returnHome: 'العودة إلى الرئيسية',
@@ -269,6 +272,7 @@ export const uiCopy = {
     backToArticles: 'Назад к статьям',
     relatedProducts: 'Похожие машины',
     continueReading: 'Читать дальше',
+    contactCta: 'Связаться с Jiuyu',
     notFoundTitle: 'Страница не найдена',
     notFoundBody: 'Эта страница не входит в текущий сайт Jiuyu Machinery. Вернитесь на главную или продолжите просмотр каталога.',
     returnHome: 'На главную',
@@ -318,6 +322,7 @@ export const uiCopy = {
     backToArticles: string
     relatedProducts: string
     continueReading: string
+    contactCta: string
     notFoundTitle: string
     notFoundBody: string
     returnHome: string
@@ -354,6 +359,9 @@ export const homeDesignCopy = {
 export const storyDesignCopy = {
   en: {
     signalLabel: 'Signal',
+    toneTitle: 'Industrial tone',
+    toneBody:
+      'Dark metal surfaces, rigid framing, and selective engineering-yellow accents set the tone. The goal is heavy-equipment confidence, not marketplace noise.',
     brandPosture: 'Brand posture',
     brandPostureValue: 'Industrial / direct',
     catalogLogic: 'Catalog logic',
@@ -377,6 +385,8 @@ export const storyDesignCopy = {
   },
   zh: {
     signalLabel: '信号',
+    toneTitle: '工业语气',
+    toneBody: '深色金属表面、刚性结构和克制的工程黄点缀共同建立语气。目标是传达重型设备的可信度，而不是平台式噪音。',
     brandPosture: '品牌姿态',
     brandPostureValue: '工业 / 直接',
     catalogLogic: '目录逻辑',
@@ -395,6 +405,9 @@ export const storyDesignCopy = {
   },
   ar: {
     signalLabel: 'إشارة',
+    toneTitle: 'النبرة الصناعية',
+    toneBody:
+      'تمنح الأسطح المعدنية الداكنة والإطارات الصارمة ولمسات الأصفر الهندسي المركزة الموقع نبرته. الهدف هو الثقة في المعدات الثقيلة لا ضجيج المنصات.',
     brandPosture: 'وضع العلامة',
     brandPostureValue: 'صناعي / مباشر',
     catalogLogic: 'منطق الكتالوج',
@@ -418,6 +431,9 @@ export const storyDesignCopy = {
   },
   ru: {
     signalLabel: 'Сигнал',
+    toneTitle: 'Индустриальный тон',
+    toneBody:
+      'Темные металлические поверхности, жесткая рамочная композиция и точечные инженерно-желтые акценты задают тон. Цель — внушать доверие к тяжелой технике, а не создавать шум маркетплейса.',
     brandPosture: 'Позиция бренда',
     brandPostureValue: 'Индустриально / прямо',
     catalogLogic: 'Логика каталога',
@@ -443,6 +459,8 @@ export const storyDesignCopy = {
   Locale,
   {
     signalLabel: string
+    toneTitle: string
+    toneBody: string
     brandPosture: string
     brandPostureValue: string
     catalogLogic: string

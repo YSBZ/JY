@@ -37,11 +37,8 @@ export function StoryPage() {
           <aside className="flex flex-col justify-between gap-6 border border-white/10 bg-black/45 p-6 backdrop-blur-xl">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">{design.signalLabel}</p>
-              <strong className="mt-3 block font-['Oxanium'] text-4xl leading-none text-amber-300">Industrial Tone</strong>
-              <p className="mt-4 text-base leading-7 text-stone-400">
-                Dark metal surfaces, rigid framing, and selective engineering-yellow accents set the tone. The goal is
-                heavy-equipment confidence, not marketplace noise.
-              </p>
+              <strong className="mt-3 block font-['Oxanium'] text-4xl leading-none text-amber-300">{design.toneTitle}</strong>
+              <p className="mt-4 text-base leading-7 text-stone-400">{design.toneBody}</p>
             </div>
             <div className="grid gap-3 border-t border-white/10 pt-5 text-sm text-stone-400">
               <div className="flex items-center justify-between gap-4">
@@ -104,7 +101,7 @@ export function StoryPage() {
               className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
               to="/contact"
             >
-              {ui.formSubmit}
+              {ui.contactCta}
             </Link>
           </div>
         </div>

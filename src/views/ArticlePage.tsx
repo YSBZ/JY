@@ -87,12 +87,17 @@ export function ArticlePage() {
           {relatedArticles.map((item) => (
             <Link
               key={item.slug}
-              className="border border-white/10 bg-zinc-950/85 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
+              className="flex h-full flex-col border border-white/10 bg-zinc-950/85 p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-amber-300/35"
               to={`/articles/${item.slug}`}
             >
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{item.tag[locale]}</span>
               <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{item.title[locale]}</h3>
               <p className="mt-3 text-lg leading-7 text-stone-400">{item.excerpt[locale]}</p>
+              <div className="mt-auto pt-6">
+                <span className="inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+                  {ui.articleOpen}
+                </span>
+              </div>
             </Link>
           ))}
         </div>
