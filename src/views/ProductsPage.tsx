@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { productFamilyCopy, products, type ProductFamily, uiCopy } from '../content/site'
+import { formatLocaleNumber, productFamilyCopy, products, type ProductFamily, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -37,7 +37,7 @@ export function ProductsPage() {
                 type="button"
               >
                 <span>{ui.productAllFamilies}</span>
-                <span>{products.length}</span>
+                <span>{formatLocaleNumber(locale, products.length)}</span>
               </button>
               {(Object.keys(productFamilyCopy) as ProductFamily[]).map((family) => {
                 const familyCount = products.filter((product) => product.family === family).length
@@ -54,7 +54,7 @@ export function ProductsPage() {
                     type="button"
                   >
                     <span>{productFamilyCopy[family][locale]}</span>
-                    <span>{familyCount}</span>
+                    <span>{formatLocaleNumber(locale, familyCount)}</span>
                   </button>
                 )
               })}
@@ -69,7 +69,7 @@ export function ProductsPage() {
                 to={`/products/${product.slug}`}
               >
                 <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{`0${index + 1}`}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{formatLocaleNumber(locale, index + 1, 2)}</span>
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
                     {productFamilyCopy[product.family][locale]}
                   </span>

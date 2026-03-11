@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articleDesignCopy, articles, uiCopy } from '../content/site'
+import { articleDesignCopy, articles, formatLocaleNumber, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -27,12 +27,12 @@ export function ArticlesPage() {
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag[locale]}</span>
-                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">0{index + 1}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{formatLocaleNumber(locale, index + 1, 2)}</span>
                 </div>
                 <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
                 <p className="mt-3 max-w-3xl text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
                 <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6">
-                  <span className="text-sm text-stone-500">{article.body[locale].length} {design.blocksSuffix}</span>
+                  <span className="text-sm text-stone-500">{formatLocaleNumber(locale, article.body[locale].length)} {design.blocksSuffix}</span>
                   <Link
                     className="inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
                     to={`/articles/${article.slug}`}

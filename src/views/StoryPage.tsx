@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { companyCopy, storyDesignCopy, uiCopy } from '../content/site'
+import { companyCopy, formatLocaleNumber, storyDesignCopy, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -25,7 +25,7 @@ export function StoryPage() {
                   className="border border-white/10 bg-zinc-950/80 p-6 backdrop-blur-xl"
                 >
                   <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">
-                    0{index + 1}
+                    {formatLocaleNumber(locale, index + 1, 2)}
                   </div>
                   <h3 className="mt-4 font-['Oxanium'] text-2xl text-stone-100">{title}</h3>
                   <p className="mt-3 text-lg leading-7 text-stone-400">{body}</p>
@@ -73,7 +73,7 @@ export function StoryPage() {
             <div className="mt-5 grid gap-4 md:grid-cols-2">
               {design.siteGoals.map((body, index) => (
                 <div key={index} className="border border-white/10 bg-black/30 p-4">
-                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{`0${index + 1}`}</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{formatLocaleNumber(locale, index + 1, 2)}</div>
                   <p className="mt-3 text-base leading-7 text-stone-300">{body}</p>
                 </div>
               ))}

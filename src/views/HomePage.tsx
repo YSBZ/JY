@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { articles, homeCopy, homeDesignCopy, productFamilyCopy, products, uiCopy } from '../content/site'
+import { articles, formatLocaleNumber, homeCopy, homeDesignCopy, productFamilyCopy, products, uiCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import { PageSection } from '../ui/PageSection'
 import { SectionTitle } from '../ui/SectionTitle'
@@ -41,7 +41,7 @@ export function HomePage() {
           <div className="mt-8 grid gap-3 md:grid-cols-3">
             {design.signals.map((label, index) => (
               <div key={index} className="border border-white/10 bg-black/25 px-4 py-4 backdrop-blur-xl">
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{`0${index + 1}`}</div>
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">{formatLocaleNumber(locale, index + 1, 2)}</div>
                 <p className="mt-2 text-base leading-6 text-stone-300">{label}</p>
               </div>
             ))}
@@ -58,7 +58,7 @@ export function HomePage() {
           <div className="site-hero-metric absolute right-5 bottom-5 z-10 w-[min(280px,calc(100%-40px))] border border-amber-300/35 bg-black/80 p-5">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">{ui.trackedOutput}</span>
             <strong className="mt-3 block font-['Oxanium'] text-6xl leading-none text-amber-300">
-              {String(products.length).padStart(2, '0')}
+              {formatLocaleNumber(locale, products.length, 2)}
             </strong>
             <p className="mt-3 text-base leading-6 text-stone-400">{ui.launchCount}</p>
           </div>

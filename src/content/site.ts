@@ -2,8 +2,19 @@ export type Locale = 'en' | 'zh' | 'ar' | 'ru'
 
 const assetBase = import.meta.env.BASE_URL
 
+function toIntlLocale(locale: Locale) {
+  if (locale === 'zh') return 'zh-CN'
+  if (locale === 'ar') return 'ar'
+  if (locale === 'ru') return 'ru'
+  return 'en'
+}
+
 function assetPath(path: string) {
   return `${assetBase}${path.replace(/^\//, '')}`
+}
+
+export function formatLocaleNumber(locale: Locale, value: number, minimumIntegerDigits = 1) {
+  return new Intl.NumberFormat(toIntlLocale(locale), { minimumIntegerDigits }).format(value)
 }
 
 export const localeOptions = ['en', 'zh', 'ar', 'ru'] as const
