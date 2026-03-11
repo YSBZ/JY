@@ -98,7 +98,9 @@ export function ContactPage() {
                 {ui.formName}
               </span>
               <input
+                autoComplete="name"
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                name="name"
                 onChange={(event) => updateField('name', event.target.value)}
                 placeholder={ui.formNamePlaceholder}
                 required
@@ -108,7 +110,10 @@ export function ContactPage() {
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formEmail}</span>
               <input
+                autoComplete="email"
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                inputMode="email"
+                name="email"
                 onChange={(event) => updateField('email', event.target.value)}
                 placeholder={ui.formEmailPlaceholder}
                 required
@@ -119,7 +124,9 @@ export function ContactPage() {
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formCompany}</span>
               <input
+                autoComplete="organization"
                 className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                name="company"
                 onChange={(event) => updateField('company', event.target.value)}
                 placeholder={ui.formCompanyPlaceholder}
                 value={form.company}
@@ -129,6 +136,7 @@ export function ContactPage() {
               <label>
                 <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formProduct}</span>
                 <select
+                  name="product"
                   className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40"
                   onChange={(event) => updateField('product', event.target.value)}
                   value={form.product}
@@ -143,6 +151,7 @@ export function ContactPage() {
               <label>
                 <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formInquiryType}</span>
                 <select
+                  name="inquiryType"
                   className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none focus:border-amber-300/40"
                   onChange={(event) => updateField('inquiryType', event.target.value)}
                   value={form.inquiryType}
@@ -158,11 +167,13 @@ export function ContactPage() {
             <label>
               <span className="mb-2 block text-sm uppercase tracking-[0.12em] text-stone-400">{ui.formDetails}</span>
               <textarea
-                className="w-full border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                className="min-h-40 w-full resize-y border border-white/10 bg-white/[0.04] px-4 py-3 text-stone-100 outline-none placeholder:text-stone-500 focus:border-amber-300/40"
+                name="details"
                 onChange={(event) => updateField('details', event.target.value)}
                 placeholder={ui.formDetailsPlaceholder}
                 required
                 rows={6}
+                spellCheck={false}
                 value={form.details}
               />
             </label>
