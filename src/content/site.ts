@@ -11,7 +11,7 @@ export const localeOptions = ['en', 'zh', 'ar', 'ru'] as const
 export const shellCopy = {
   en: {
     subtitle: 'Global machinery site',
-    footerKicker: 'Industrial site MVP',
+    footerKicker: 'Industrial site release',
     footerReach: 'Built for global reach',
     footerSignals: ['EN / ZH / AR / RU', 'Catalog-first structure', 'Inquiry-ready shell'],
     footerChannel: 'Channel',
@@ -22,7 +22,7 @@ export const shellCopy = {
   },
   zh: {
     subtitle: '国际机械品牌站',
-    footerKicker: '工业展示站首版',
+    footerKicker: '工业展示站',
     footerReach: '海外访问优先',
     footerSignals: ['英文 / 中文 / 阿语 / 俄语', '目录优先结构', '可承接询盘的外壳'],
     footerChannel: '渠道',
@@ -33,7 +33,7 @@ export const shellCopy = {
   },
   ar: {
     subtitle: 'موقع عالمي للآلات',
-    footerKicker: 'النسخة الأولى للموقع الصناعي',
+    footerKicker: 'موقع صناعي عالمي',
     footerReach: 'مصمم للوصول العالمي',
     footerSignals: ['EN / ZH / AR / RU', 'هيكل يركز على الكتالوج', 'واجهة جاهزة للاستفسار'],
     footerChannel: 'القناة',
@@ -44,7 +44,7 @@ export const shellCopy = {
   },
   ru: {
     subtitle: 'Глобальный сайт машиностроения',
-    footerKicker: 'MVP промышленного сайта',
+    footerKicker: 'Промышленный сайт',
     footerReach: 'Сайт для глобальной аудитории',
     footerSignals: ['EN / ZH / AR / RU', 'Каталог как основа', 'Оболочка для запросов'],
     footerChannel: 'Канал',
@@ -71,7 +71,7 @@ export const shellCopy = {
 export const uiCopy = {
   en: {
     trackedOutput: 'Tracked output',
-    launchCount: 'Suggested flagship product count for launch',
+    launchCount: 'Current flagship machines presented in this release',
     storyLink: 'Read the brand story',
     articleOpen: 'Open article',
     articleMissing: 'Article not found.',
@@ -98,7 +98,7 @@ export const uiCopy = {
     formDetailsPlaceholder: 'Tell us the product, operating scenario, volume, and destination market',
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Send inquiry',
-    formResponseNote: 'This is a front-end inquiry flow preview. Final email and form routing will be connected after deployment.',
+    formResponseNote: 'Inquiry routing will be finalized during deployment and domain setup.',
     productPositioning: 'Positioning',
     productConfig: 'Configuration cues',
     productFamilyLabel: 'Product families',
@@ -110,7 +110,7 @@ export const uiCopy = {
   },
   zh: {
     trackedOutput: '重点数量',
-    launchCount: '首版建议精选设备数量',
+    launchCount: '当前版本展示的重点设备数量',
     storyLink: '查看品牌介绍',
     articleOpen: '查看详情',
     articleMissing: '未找到文章。',
@@ -135,7 +135,7 @@ export const uiCopy = {
     formDetailsPlaceholder: '请填写产品、工况、数量或地区需求',
     formEmailPlaceholder: 'name@company.com',
     formSubmit: '提交需求',
-    formResponseNote: '当前是前端询盘流程预览。部署后会接入真实邮箱和表单流转。',
+    formResponseNote: '询盘流转会在部署和域名接入阶段完成。',
     productPositioning: '核心说明',
     productConfig: '配置方向',
     productFamilyLabel: '产品系列',
@@ -147,7 +147,7 @@ export const uiCopy = {
   },
   ar: {
     trackedOutput: 'حجم الإطلاق',
-    launchCount: 'عدد المنتجات الرئيسية المقترح لإطلاق النسخة الأولى',
+    launchCount: 'عدد الآلات الرئيسية المعروضة في هذا الإصدار',
     storyLink: 'اقرأ قصة العلامة',
     articleOpen: 'فتح المقال',
     articleMissing: 'المقال غير موجود.',
@@ -172,7 +172,7 @@ export const uiCopy = {
     formDetailsPlaceholder: 'اذكر المنتج، وسيناريو التشغيل، والكمية، والسوق المستهدف',
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'إرسال الاستفسار',
-    formResponseNote: 'هذه معاينة لواجهة الاستفسار فقط. سيتم ربط البريد والمسار النهائي بعد النشر.',
+    formResponseNote: 'سيتم استكمال مسار الاستفسار أثناء إعداد النشر والنطاق.',
     productPositioning: 'التموضع',
     productConfig: 'ملامح التكوين',
     productFamilyLabel: 'عائلات المنتجات',
@@ -184,7 +184,7 @@ export const uiCopy = {
   },
   ru: {
     trackedOutput: 'Объем запуска',
-    launchCount: 'Рекомендуемое число флагманских продуктов для первого релиза',
+    launchCount: 'Количество флагманских машин в текущем релизе',
     storyLink: 'О бренде',
     articleOpen: 'Открыть статью',
     articleMissing: 'Статья не найдена.',
@@ -211,7 +211,7 @@ export const uiCopy = {
     formDetailsPlaceholder: 'Укажите продукт, сценарий работы, объем и целевой рынок',
     formEmailPlaceholder: 'name@company.com',
     formSubmit: 'Отправить запрос',
-    formResponseNote: 'Сейчас это только превью фронтенд-формы. Реальная почта и маршрутизация будут подключены после деплоя.',
+    formResponseNote: 'Маршрутизация запроса будет завершена на этапе деплоя и подключения домена.',
     productPositioning: 'Позиционирование',
     productConfig: 'Конфигурация',
     productFamilyLabel: 'Семейства продукции',
