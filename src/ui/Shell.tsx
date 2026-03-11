@@ -110,7 +110,7 @@ export function Shell({ children }: { children: ReactNode }) {
             className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
             to="/contact"
           >
-            {items[items.length - 1]?.label ?? 'Contact'}
+            {items[items.length - 1]?.label ?? copy.footerPrimaryCta}
           </Link>
         </div>
       </header>
@@ -156,7 +156,7 @@ export function Shell({ children }: { children: ReactNode }) {
             </div>
             <div className="flex items-center justify-between gap-4">
               <span>{copy.footerPrimaryCta}</span>
-              <span className="text-stone-100">{items[items.length - 1]?.label ?? 'Contact'}</span>
+              <span className="text-stone-100">{items[items.length - 1]?.label ?? copy.footerPrimaryCta}</span>
             </div>
           </div>
         </div>
