@@ -20,7 +20,7 @@ function LanguageToggle({
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          aria-label="Language switcher"
+          aria-label={label}
           className="inline-flex items-center gap-3 border border-white/10 bg-black/30 px-4 py-3 text-left transition hover:border-amber-300/35"
           type="button"
         >
@@ -135,7 +135,14 @@ export function Shell({ children }: { children: ReactNode }) {
 
         <div className="grid gap-4 lg:justify-items-end">
           <div className="grid gap-1 text-sm text-stone-400 lg:justify-items-end">
-            <span>jiuyumachinery.com</span>
+            <a
+              className="transition hover:text-amber-300"
+              href="https://jiuyumachinery.com"
+              rel="noreferrer"
+              target="_blank"
+            >
+              jiuyumachinery.com
+            </a>
             <span>{copy.footerReach}</span>
           </div>
           <div className="grid gap-3 border border-white/10 bg-zinc-950/70 px-5 py-4 text-sm text-stone-400 lg:min-w-[320px]">
