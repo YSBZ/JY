@@ -8,9 +8,17 @@ function assetPath(path: string) {
 
 export const localeOptions = ['en', 'zh', 'ar', 'ru'] as const
 
+export const localeLabels = {
+  en: 'English',
+  zh: '中文',
+  ar: 'العربية',
+  ru: 'Русский',
+} satisfies Record<Locale, string>
+
 export const shellCopy = {
   en: {
     subtitle: 'Global industrial showcase',
+    languageLabel: 'Language',
     footerKicker: 'Industrial brand site',
     footerReach: 'Prepared for global buyers',
     footerSignals: ['EN / ZH / AR / RU', 'Catalog-first structure', 'Inquiry-ready shell'],
@@ -22,6 +30,7 @@ export const shellCopy = {
   },
   zh: {
     subtitle: '国际工业展示站',
+    languageLabel: '语言',
     footerKicker: '工业品牌站',
     footerReach: '面向全球买家准备',
     footerSignals: ['英文 / 中文 / 阿语 / 俄语', '目录优先结构', '可承接询盘的外壳'],
@@ -33,6 +42,7 @@ export const shellCopy = {
   },
   ar: {
     subtitle: 'عرض صناعي عالمي',
+    languageLabel: 'اللغة',
     footerKicker: 'موقع علامة صناعية',
     footerReach: 'مجهز للمشترين العالميين',
     footerSignals: ['EN / ZH / AR / RU', 'هيكل يركز على الكتالوج', 'واجهة جاهزة للاستفسار'],
@@ -44,6 +54,7 @@ export const shellCopy = {
   },
   ru: {
     subtitle: 'Глобальная промышленная витрина',
+    languageLabel: 'Язык',
     footerKicker: 'Сайт промышленного бренда',
     footerReach: 'Подготовлено для глобальных покупателей',
     footerSignals: ['EN / ZH / AR / RU', 'Каталог как основа', 'Оболочка для запросов'],
@@ -57,6 +68,7 @@ export const shellCopy = {
   Locale,
   {
     subtitle: string
+    languageLabel: string
     footerKicker: string
     footerReach: string
     footerSignals: string[]

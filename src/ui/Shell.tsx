@@ -3,20 +3,32 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 import type { ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-import { localeOptions, nav, shellCopy } from '../content/site'
+import { localeLabels, localeOptions, nav, shellCopy } from '../content/site'
 import { useLocale } from '../state/locale'
 import type { Locale } from '../content/site'
 
-function LanguageToggle({ locale, onChange }: { locale: Locale; onChange: (locale: Locale) => void }) {
+function LanguageToggle({
+  locale,
+  onChange,
+  label,
+}: {
+  locale: Locale
+  onChange: (locale: Locale) => void
+  label: string
+}) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
           aria-label="Language switcher"
-          className="inline-flex items-center justify-center border border-white/10 bg-black/30 px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
+          className="inline-flex items-center gap-3 border border-white/10 bg-black/30 px-4 py-3 text-left transition hover:border-amber-300/35"
           type="button"
         >
-          {locale.toUpperCase()}
+          <span className="grid">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-500">{label}</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-100">{localeLabels[locale]}</span>
+          </span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-300">{locale.toUpperCase()}</span>
         </button>
       </DropdownMenu.Trigger>
 
@@ -36,7 +48,10 @@ function LanguageToggle({ locale, onChange }: { locale: Locale; onChange: (local
               }`}
               onSelect={() => onChange(value)}
             >
-              {value.toUpperCase()}
+              <div className="flex min-w-40 items-center justify-between gap-4">
+                <span>{localeLabels[value]}</span>
+                <span className="text-[10px] tracking-[0.22em] text-stone-500">{value.toUpperCase()}</span>
+              </div>
             </DropdownMenu.Item>
           ))}
         </DropdownMenu.Content>
@@ -74,10 +89,10 @@ export function Shell({ children }: { children: ReactNode }) {
     <div className="mx-auto min-h-screen max-w-[1380px] px-3 py-4 sm:px-5">
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(241,190,50,0.12),transparent_24%),radial-gradient(circle_at_78%_0%,rgba(255,255,255,0.06),transparent_18%),linear-gradient(180deg,#111418,#090a0c_60%)]" />
       <header className="sticky top-4 z-20 grid items-center gap-5 border border-white/10 bg-black/70 px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:grid-cols-[auto_1fr_auto] lg:px-6">
-        <div className="flex flex-col gap-0.5">
+        <Link className="flex flex-col gap-0.5 transition hover:text-amber-300" to="/">
           <strong className="text-base font-semibold tracking-[0.08em] text-stone-100">Jiuyu Machinery</strong>
           <small className="text-sm text-stone-400">{copy.subtitle}</small>
-        </div>
+        </Link>
 
         <NavigationMenu.Root className="overflow-x-auto overflow-y-hidden">
           <NavigationMenu.List className="flex min-w-max flex-nowrap justify-start gap-2 lg:min-w-0 lg:justify-center">
@@ -90,7 +105,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </NavigationMenu.Root>
 
         <div className="flex flex-wrap items-center gap-3 lg:justify-end">
-          <LanguageToggle locale={locale} onChange={setLocale} />
+          <LanguageToggle label={copy.languageLabel} locale={locale} onChange={setLocale} />
           <Link
             className="inline-flex items-center justify-center border border-white/10 bg-white/[0.03] px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition hover:border-amber-300/35 hover:text-amber-300"
             to="/contact"
