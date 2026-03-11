@@ -23,7 +23,7 @@ export function ArticlesPage() {
             {articles.map((article, index) => (
               <article
                 key={article.slug}
-                className="border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:border-amber-300/25"
+                className="flex h-full flex-col border border-white/10 bg-zinc-950/85 p-6 backdrop-blur-xl transition hover:border-amber-300/25"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">{article.tag[locale]}</span>
@@ -31,7 +31,7 @@ export function ArticlesPage() {
                 </div>
                 <h3 className="mt-3 font-['Oxanium'] text-3xl text-stone-100">{article.title[locale]}</h3>
                 <p className="mt-3 max-w-3xl text-lg leading-7 text-stone-400">{article.excerpt[locale]}</p>
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4">
+                <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6">
                   <span className="text-sm text-stone-500">{article.body[locale].length} {design.blocksSuffix}</span>
                   <Link
                     className="inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-amber-300"
