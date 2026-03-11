@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 
-import { articles, products, uiCopy } from './content/site'
+import { articles, companyCopy, contactCopy, homeCopy, products, uiCopy } from './content/site'
 import { useLocale } from './state/locale'
 import { Shell } from './ui/Shell'
 import { ArticlePage } from './views/ArticlePage'
@@ -27,35 +27,58 @@ function RouteMetadata() {
   const location = useLocation()
   const { locale } = useLocale()
   const ui = uiCopy[locale]
+  const home = homeCopy[locale]
+  const company = companyCopy[locale]
+  const contact = contactCopy[locale]
 
   useEffect(() => {
     const path = location.pathname
     let title = 'Jiuyu Machinery'
+    let description = home.intro
 
     if (path === '/') {
       title = 'Jiuyu Machinery'
+      description = home.intro
     } else if (path === '/products') {
       title = `${ui.productCatalogTitle} | Jiuyu Machinery`
+      description = ui.productCatalogBody
     } else if (path.startsWith('/products/')) {
       const slug = path.replace('/products/', '')
       const product = products.find((item) => item.slug === slug)
       title = product ? `${product.title[locale]} | Jiuyu Machinery` : `${ui.productMissing} | Jiuyu Machinery`
+      description = product ? product.summary[locale] : ui.productMissingBody
     } else if (path === '/story') {
       title = `${ui.companyEyebrow} | Jiuyu Machinery`
+      description = company.intro
     } else if (path === '/articles') {
       title = `${ui.articlesTitle} | Jiuyu Machinery`
+      description = ui.articlesBody
     } else if (path.startsWith('/articles/')) {
       const slug = path.replace('/articles/', '')
       const article = articles.find((item) => item.slug === slug)
       title = article ? `${article.title[locale]} | Jiuyu Machinery` : `${ui.articleMissing} | Jiuyu Machinery`
+      description = article ? article.excerpt[locale] : ui.articleMissingBody
     } else if (path === '/contact') {
       title = `${ui.inquiryEyebrow} | Jiuyu Machinery`
+      description = contact.intro
     } else {
       title = `${ui.notFoundTitle} | Jiuyu Machinery`
+      description = ui.notFoundBody
     }
 
     document.title = title
-  }, [locale, location.pathname, ui])
+    const descriptionMeta = document.querySelector('meta[name="description"]')
+    const ogTitleMeta = document.querySelector('meta[property="og:title"]')
+    const ogDescriptionMeta = document.querySelector('meta[property="og:description"]')
+    const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]')
+    const twitterDescriptionMeta = document.querySelector('meta[name="twitter:description"]')
+
+    descriptionMeta?.setAttribute('content', description)
+    ogTitleMeta?.setAttribute('content', title)
+    ogDescriptionMeta?.setAttribute('content', description)
+    twitterTitleMeta?.setAttribute('content', title)
+    twitterDescriptionMeta?.setAttribute('content', description)
+  }, [company.intro, contact.intro, home.intro, locale, location.pathname, ui])
 
   return null
 }
