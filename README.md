@@ -24,6 +24,7 @@ npm run dev
 
 ```bash
 npm run build
+npm run verify:release
 ```
 
 ## Deployment Direction
@@ -39,6 +40,7 @@ npm run build
 - Vite builds from `/` instead of a GitHub Pages subpath.
 - `vercel.json` keeps SPA rewrites so direct route visits continue to work.
 - Public assets now include `robots.txt`, `sitemap.xml`, and `site.webmanifest` for the production domain.
+- `npm run verify:release` checks the built output and required production assets before deployment.
 
 ## Vercel Handoff
 
